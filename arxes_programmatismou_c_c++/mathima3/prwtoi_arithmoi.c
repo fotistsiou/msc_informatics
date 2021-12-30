@@ -15,7 +15,7 @@
 
 int main() {
 
-    int i,j;
+    int i, j;
     for (i = 2; i < 30; i++) { // the smaller the condition the more understandable
         /*
             With the nested loop, we check if "i" is an even or odd number.
