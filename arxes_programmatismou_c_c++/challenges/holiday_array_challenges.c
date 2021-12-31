@@ -23,7 +23,7 @@ int main() {
     int max = a[0];
     int i;
     for (i = 1; i < len_a; i++) {
-        if (max < a[i]) {
+        if (a[i] > max) {
             max = a[i];
         }
     }
@@ -32,29 +32,43 @@ int main() {
     // Second max item of the array
     int max2 = a[0];
     for (i = 0; i < len_a; i++) {
-        if (max > a[i] && max2 < a[i]) {
+        if (a[i] < max && a[i] > max2) {
             max2 = a[i];
         }
     }
     printf("The second max item of 'a' array is: %d\n", max2);
 
+    // Position of the max items
+    for (i = 0; i < len_a; i++) {
+        if (a[i] == max) {
+            printf("The max number %d exist in the position: %d\n", max, i);
+        }
+    }
+
     // Min item of the array
     int min = a[0];
     for (i = 1; i < len_a; i++) {
-        if (min > a[i]) {
+        if (a[i] < min) {
             min = a[i];
         }
     }
     printf("The min item of 'a' array is: %d\n", min);
 
     // Second min item of the array
-    int min2;
+    int min2 = max;
     for (i = 0; i < len_a; i++) {
-        if (min < a[i] && min2 > a[i]) {
+        if (a[i] > min && a[i] < min2) {
             min2 = a[i];
         }
     }
     printf("The second min item of 'a' array is: %d\n", min2);
+
+    // Position of the min items
+    for (i = 0; i < len_a; i++) {
+        if (a[i] == min) {
+            printf("The min number %d exist in the position: %d\n", min, i);
+        }
+    }
 
     // Find an item of an array
     int num;
@@ -89,7 +103,7 @@ int main() {
     } else {
         printf("The number %d EXISTS in 'a' array and exists %d times!\n", num2, how_many);
     }
-    
+
 
     return 0;
 }
