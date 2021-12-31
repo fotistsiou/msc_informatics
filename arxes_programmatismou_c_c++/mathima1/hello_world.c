@@ -15,6 +15,6 @@
 // ---------- Main Section ---------- //
 
 int main() { // The first function of every C program that is responsible for starting the execution and termination of the program.
-    printf("Hello, World!\n"); // Call the printf function, responsible for output in the screen.
+    printf("Hello, World! \n"); // Call the printf function, responsible for output in the screen.
     return 0; // Terminates the main function and hence our program. A return 0 means that the program will execute successfully and did what it was intended to do.
 }
