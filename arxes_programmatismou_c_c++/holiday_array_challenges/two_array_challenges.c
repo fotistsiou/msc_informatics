@@ -34,7 +34,7 @@ int main() {
             }
         }
     }
-    printf("The max item of 'a' array is: %d\n", max_a_and_b);
+    printf("The max item of 'a' and 'b' arrays is: %d\n", max_a_and_b);
 
 
     // Min item of "a" and "b" arrays
@@ -49,7 +49,7 @@ int main() {
             }
         }
     }
-    printf("The max item of 'a' array is: %d\n", min_a_and_b);
+    printf("The max item of 'a' and 'b' arrays is: %d\n", min_a_and_b);
 
 
     return 0;
