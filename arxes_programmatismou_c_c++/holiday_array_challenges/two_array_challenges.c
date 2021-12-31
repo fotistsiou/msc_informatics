@@ -16,7 +16,7 @@
 int main() {
 
     int a[6] = {2, 58, 100, 123, 343, 58};
-    int b[3] = {23, 57, 1234};
+    int b[4] = {23, 57, 1234, 100};
     int len_a = sizeof(a)/sizeof(a[0]); // calculation length of an array
     int len_b = sizeof(b)/sizeof(b[0]); // calculation length of an array
 
@@ -50,6 +50,27 @@ int main() {
         }
     }
     printf("The max item of 'a' and 'b' arrays is: %d\n", min_a_and_b);
+
+
+    // Which items of array "a" are present in array "b"
+    for (i = 0; i < len_a; i++) {
+        for (j = 0; j < len_b; j++) {
+            if (a[i] == b[j]) {
+                printf("Them item '%d' is present both arrays\n", b[j]);
+            }
+        }
+    }
+
+    // How many items of array "a" are present in array "b"
+    int items = 0;
+    for (i = 0; i < len_a; i++) {
+        for (j = 0; j < len_b; j++) {
+            if (a[i] == b[j]) {
+                items++;
+            }
+        }
+    }
+    printf("There is/are '%d' item/items in both arrays\n", items);
 
 
     return 0;
