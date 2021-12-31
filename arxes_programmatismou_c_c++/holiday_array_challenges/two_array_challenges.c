@@ -20,6 +20,37 @@ int main() {
     int len_a = sizeof(a)/sizeof(a[0]); // calculation length of an array
     int len_b = sizeof(b)/sizeof(b[0]); // calculation length of an array
 
+    // Max item of "a" and "b" arrays
+    int max_a_and_b = a[0];
+    int i;
+    int j;
+    for (i = 0; i < len_a; i++) {
+        if (max_a_and_b < a[i]) {
+            max_a_and_b = a[i];
+        }
+        for (j = 0; j < len_b; j++) {
+            if (max_a_and_b < b[i]) {
+                max_a_and_b = b[i];
+            }
+        }
+    }
+    printf("The max item of 'a' array is: %d\n", max_a_and_b);
+
+
+    // Min item of "a" and "b" arrays
+    int min_a_and_b = a[0];
+    for (i = 0; i < len_a; i++) {
+        if (min_a_and_b > a[i]) {
+            min_a_and_b = a[i];
+        }
+        for (j = 0; j < len_b; j++) {
+            if (min_a_and_b > b[i]) {
+                min_a_and_b = b[i];
+            }
+        }
+    }
+    printf("The max item of 'a' array is: %d\n", min_a_and_b);
+
 
     return 0;
 }
