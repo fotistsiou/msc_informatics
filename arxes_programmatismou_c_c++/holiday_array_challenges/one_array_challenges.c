@@ -16,7 +16,6 @@
 int main() {
 
     int a[6] = {2, 58, 100, 123, 343, 58};
-    int b[3] = {23, 57, 1234};
     int len_a = sizeof(a)/sizeof(a[0]); // calculation length of an array
 
     // Max item of the array
