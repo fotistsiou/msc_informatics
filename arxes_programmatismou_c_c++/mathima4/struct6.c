@@ -33,7 +33,7 @@ int main() {
 
     pts = malloc(num_choice*sizeof(struct student));
 
-    // Create Students according to user's choice
+    // Create students according to user's choice
     for (int i = 0; i < num_choice; i++) {
         printf("Student %d\n", i+1);
         printf("Enter am:");
@@ -44,7 +44,7 @@ int main() {
         scanf("%s", (pts+i)->surname);
     }
 
-    // Print Students with for loop
+    // Print students with for loop
     printf("*****************************************************\n");
     for (int j = 0; j < num_choice; j++) {
         printf("Student %d: %s %s, with am:%d\n", j+1, (pts+j)->name, (pts+j)->surname, (pts+j)->am);

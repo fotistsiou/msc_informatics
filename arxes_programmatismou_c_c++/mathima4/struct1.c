@@ -44,7 +44,7 @@ int main1() {
     printf("Enter surname:");
     scanf("%s", s2.surname);
 
-    // Print Students
+    // Print students
     printf("*****************************************************\n");
     printf("First Student: %s %s, with am:%d\n", s1.name, s1.surname, s1.am);
     printf("Second Student: %s %s, with am:%d\n", s2.name, s2.surname, s2.am);

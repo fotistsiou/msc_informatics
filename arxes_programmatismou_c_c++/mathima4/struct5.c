@@ -39,7 +39,7 @@ int main5() {
         scanf("%s", (pts+i)->surname);
     }
 
-    // Print Students with for loop
+    // Print students with for loop
     printf("*****************************************************\n");
     for (int j = 0; j < 2; j++) {
         printf("Student %d: %s %s, with am:%d\n", j+1, (pts+j)->name, (pts+j)->surname, (pts+j)->am);

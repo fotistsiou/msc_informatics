@@ -29,7 +29,7 @@ int main4() {
     // Use one pointer instead of two pointers
     pts = malloc(2*sizeof(struct student));
 
-    // 1st Student
+    // 1st student
     // Replace "pts1" with "(pts+0)"
     printf("1st Student\n");
     printf("Enter am:");
@@ -39,7 +39,7 @@ int main4() {
     printf("Enter surname:");
     scanf("%s", (pts+0)->surname);
 
-    // 2nd Student
+    // 2nd student
     // Replace "pts2" with "(pts+1)"
     printf("2nd Student\n");
     printf("Enter am:");
@@ -49,7 +49,7 @@ int main4() {
     printf("Enter surname:");
     scanf("%s", (pts+1)->surname);
 
-    // Print Students
+    // Print students
     // Replace "pts1" with "(pts+0)" and "pts2" with "(pts+1)"
     printf("*****************************************************\n");
     printf("First Student: %s %s, with am:%d\n", (pts+0)->name, (pts+0)->surname, (pts+0)->am);

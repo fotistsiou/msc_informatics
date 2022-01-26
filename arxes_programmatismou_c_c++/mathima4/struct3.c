@@ -29,12 +29,12 @@ int main3() {
     // Use the malloc function in order to replace the variables:
     //      1. Include <stdlib.h> library of C in the "Header" section.
     //      2. Use the malloc() function.
-    // "malloc()" allocates SIZE bytes of memory and takes as argument a size.
-    // "sizeof()" function returns the amount of memory is allocated to "struct student" data type.
+    // The "malloc()" function allocates SIZE bytes of memory and takes as argument a size.
+    // The "sizeof()" function returns the amount of memory is allocated to "struct student" data type.
     pts1 = malloc(sizeof(struct student));
     pts2 = malloc(sizeof(struct student));
 
-    // 1st Student
+    // 1st student
     printf("1st Student\n");
     printf("Enter am:");
     scanf("%d", &pts1->am);
@@ -43,7 +43,7 @@ int main3() {
     printf("Enter surname:");
     scanf("%s", pts1->surname);
 
-    // 2nd Student
+    // 2nd student
     printf("2nd Student\n");
     printf("Enter am:");
     scanf("%d", &pts2->am);

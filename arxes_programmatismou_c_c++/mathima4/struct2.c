@@ -30,7 +30,7 @@ int main2() {
     pts1 = &s1;
     pts2 = &s2;
 
-    // 1st Student
+    // 1st student
     // Replace "s1" with "pts1->" or "(*pts1)"
     printf("1st Student\n");
     printf("Enter am:");
@@ -40,7 +40,7 @@ int main2() {
     printf("Enter surname:");
     scanf("%s", pts1->surname);
 
-    // 2nd Student
+    // 2nd student
     // Replace "s2" with "pts2->" or "(*pts2)"
     printf("2nd Student\n");
     printf("Enter am:");
@@ -50,7 +50,7 @@ int main2() {
     printf("Enter surname:");
     scanf("%s", pts2->surname);
 
-    // Print Students
+    // Print students
     // Replace "s1" with "pts1->" or "(*pts1)" and "s2" with "pts2->" or "(*pts2)"
     printf("*****************************************************\n");
     printf("First Student: %s %s, with am:%d\n", pts1->name, pts1->surname, pts1->am);
