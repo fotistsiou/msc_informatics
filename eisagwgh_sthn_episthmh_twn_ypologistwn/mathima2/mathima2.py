@@ -9,7 +9,7 @@
 
 # Python Arithmetic Operators #
 
-print(11+5) # Addition
+print(11+5) # Addition 
 print(11-5) # Subtraction
 print(11*5) # Multiplication
 print(11**5) # Exponentiation
