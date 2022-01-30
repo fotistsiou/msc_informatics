@@ -1,0 +1,8 @@
+       f
+      fff
+     fffff
+    fffffff
+   fffffffff
+  fffffffffff
+ fffffffffffff
+The name of the file is:  christmas_tree_4.py

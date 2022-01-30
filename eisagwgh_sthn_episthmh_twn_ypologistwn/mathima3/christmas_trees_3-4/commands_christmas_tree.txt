@@ -2,7 +2,7 @@
 python3 christmas_tree_4.py < data.txt
 
 # Output in data.txt #
-python3 christmas_tree_4.py > data.txt 
+python3 christmas_tree_4.py > data.txt 7 f
 
 # Display the return number with which the program ended #
 echo $?
