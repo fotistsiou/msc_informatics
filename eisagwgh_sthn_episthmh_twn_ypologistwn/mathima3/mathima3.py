@@ -12,6 +12,11 @@ b = "christmas.py 10 p"
 print(b.split(" "))
 print(b)
 
+# Functions
+def add(x1, x2):
+    return x1 + x2
+print("Call add() function:", add(10, 5))
+
 # random and shuffle 
 import random
 a = [1, 2, 3, 4, 5]

@@ -1,7 +1,0 @@
-python3 program.py < data.txt: input from data.txt
-
-python3 program.py > data.txt: output in data.txt
-
-python3 program.py |lpr: print program.py 
-
-echo $?: display the return number with which the program ended 

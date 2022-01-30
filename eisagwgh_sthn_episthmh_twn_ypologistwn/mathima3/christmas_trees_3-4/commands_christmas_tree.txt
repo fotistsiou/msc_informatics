@@ -1,0 +1,8 @@
+# Input from "data.txt" to "christmas_tree_4.py" and print "christmas_tree_4.py" in terminal #
+python3 christmas_tree_4.py < data.txt
+
+# Output in data.txt #
+python3 christmas_tree_4.py > data.txt 
+
+# Display the return number with which the program ended #
+echo $?

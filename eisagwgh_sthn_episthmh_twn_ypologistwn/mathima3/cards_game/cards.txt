@@ -1,0 +1,30 @@
+Player 1: 4♣ [31m9◆ [0m4♠ 
+Player 2: 9♣ [31m6◆ [0m
+Player 1 wins!
+Player 1: 8♠ J♠ 
+Player 2: [31m1◆ [0m[31mQ◆ [0m[31m3♥ [0m1♣ 
+Player 1 wins!
+Player 1: [31mQ◆ [0m[31mQ♥ [0m
+Player 2: 7♣ [31m7♥ [0m[31m10◆ [0m
+Player 2 burns... Player 1 wins!
+Player 1: 10♣ [31m6◆ [0m
+Player 2: [31mJ♥ [0m2♣ [31m10◆ [0m
+Player 2 burns... Player 1 wins!
+Player 1: [31mK♥ [0m8♣ 
+Player 2: [31m7◆ [0m[31mQ♥ [0m
+Player 1 wins!
+Player 1: 6♠ 6♣ [31m2◆ [0m[31m3♥ [0m
+Player 2: [31m10◆ [0m4♠ 2♣ 
+Player 1 wins!
+Player 1: [31m3◆ [0m2♠ 9♣ 3♣ 
+Player 2: [31m9♥ [0m1♣ [31m4◆ [0m[31m10♥ [0m
+Player 2 burns... Player 1 wins!
+Player 1: [31m9♥ [0m3♠ 9♣ 
+Player 2: [31m7◆ [0m[31m8♥ [0m
+Player 1 wins!
+Player 1: J♣ [31m3♥ [0mK♣ 
+Player 2: [31m6◆ [0m[31m4♥ [0m[31m8◆ [0m
+Player 1 burns... Player 2 wins!
+Player 1: [31m3◆ [0m1♠ [31m1◆ [0m5♣ 4♠ 6♣ 
+Player 2: [31m10◆ [0m[31mQ♥ [0m
+Draw...

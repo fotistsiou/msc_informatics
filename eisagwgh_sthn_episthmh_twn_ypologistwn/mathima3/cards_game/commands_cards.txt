@@ -1,0 +1,23 @@
+# Print "cards3.py" output #
+python3 cards3.py |lpr 
+
+# Output in "cards.txt" #
+python3 cards3.py > cards.txt 
+
+# Print in terminal how many times the "Player 1 wins!" string was found in "cards.txt" #
+grep "Player 1 wins!" cards.txt | wc -l
+
+# Print in terminal how many times the "Player 2 wins!" string was found in "cards.txt" #
+grep "Player 2 wins!" cards.txt | wc -l
+
+# Print in terminal how many times the "Player 1 wins!" string was found in "cards.txt" and next to it the string in which it was found #
+grep "Player 1 wins!" cards.txt | sort | uniq -c
+
+# Print in terminal how many times the "Player 2 wins!" string was found in "cards.txt" and next to it the string in which it was found #
+grep "Player 2 wins!" cards.txt | sort | uniq -c
+
+# Print in terminal how many times the "Player 1 wins!" string was found in "cards3.py" output and next to it the string in which it was found #
+python3 cards3.py | grep "Player 1 wins!" | sort | uniq -c
+
+# Print in terminal how many times the "Player 1 wins!" string was found in "cards3.py" output and next to it the string in which it was found #
+python3 cards3.py | grep "Player 2 wins!" | sort | uniq -c
