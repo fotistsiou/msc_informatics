@@ -1,4 +1,4 @@
-// Guidelines //
+// Guidelines from Fotis K. Tsioumas //
 
 // In order to run this code, have to follow below steps:
 // 1. Open the terminal
