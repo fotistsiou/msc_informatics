@@ -15,7 +15,7 @@ def fibo1(n):
     if n == 1 or n == 2:
         return 1
     else:
-        return fibo1(n-1)+fibo1(n-2)
+        return fibo1(n-1) + fibo1(n-2)
 # Print fibo1(1,2,3,4,5)
 for i in range(1,6):
     print("Fibo1 of ", i, " = ", fibo1(i))
@@ -43,7 +43,7 @@ for i in range(1,6):
 
 # --- 3rd way --- #
 def fibo3(n):
-    if n==1 or n==2:
+    if n == 1 or n == 2:
         return 1
     a = 1
     b = 2
@@ -61,7 +61,7 @@ for i in range(1,6):
 # Comparison between 3 ways in terms of time
 for i in range(1,30):
     # 1st way
-    ts=time()
+    ts = time()
     fibo1(i)
     t1 = time() - ts
     # 2nd way
@@ -73,7 +73,7 @@ for i in range(1,30):
     fibo3(i)
     t3 = time() - ts
 # comparison
-comparison = {t1, t2, t3}
+comparison = [t1, t2, t3]
 if (t1 == min(comparison)):
     print("Fibo1 is the fastest function")
 elif (t2 == min(comparison)):
