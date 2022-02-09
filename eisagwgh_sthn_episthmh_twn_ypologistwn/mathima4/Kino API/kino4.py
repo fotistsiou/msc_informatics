@@ -22,7 +22,6 @@ for i in range(9):
         data_in_json = response.read()
     data_in_python = json.loads(data_in_json)
     win_numbers += data_in_python["winningNumbers"]["list"]
-print("Numbers of 10 Last Draws :",win_numbers)
 
 # Print how many times each number is displayed in the last 10 draws
 for i in range(1,81):
