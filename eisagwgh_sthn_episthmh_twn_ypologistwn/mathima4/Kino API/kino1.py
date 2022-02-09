@@ -7,7 +7,7 @@
 
 # Start Code #
 
-# Fetch Data and Print Useful Information #
+# Fetch Data and Print Last Draw #
 import urllib.request
 import json
 
