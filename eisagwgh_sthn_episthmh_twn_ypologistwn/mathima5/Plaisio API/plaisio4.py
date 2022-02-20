@@ -7,7 +7,7 @@
 
 # Start Code #
 
-# Fetch Product from Plaisio as Browser and Print Products' Name and Prices from Specific Page #
+# Fetch Product from Plaisio as Browser and Print Products' Name and Prices from Pages with Use Functions #
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 
