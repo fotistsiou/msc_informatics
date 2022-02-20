@@ -6,3 +6,15 @@
 # 3. Run: python3 <filename.py>
 
 # Start Code #
+
+# Fetch Product from Plaisio and Print Products' Prices from Specific Page #
+import urllib.request
+from bs4 import BeautifulSoup
+
+url="https://www.plaisio.gr/tilefonia-tablet/tilefona/page-33"
+with urllib.request.urlopen(url) as response:
+    html = response.read()
+soup = BeautifulSoup(html, 'html.parser') # Beautify HTML code
+divs = soup.find_all("div", {"class": "price"})
+for div in divs:
+    print('Price:', div.text)
