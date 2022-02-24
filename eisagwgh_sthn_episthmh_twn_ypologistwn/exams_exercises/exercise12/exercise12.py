@@ -19,29 +19,27 @@ rounds_data = json.loads(data)
 rounds_randomness.append(rounds_data["randomness"])
 last_round = rounds_data["round"]
 
-# Fetch 19 Last Randomness Numbers before Last
+# Fetch 99 Last Randomness Numbers before Last
 for i in range(99):
-    req = Request("https://drand.cloudflare.com/public/"+str(last_round-i-1), headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20130401 Firefox/31.0"})
+    req = Request("https://drand.cloudflare.com/public/"+str(last_round-i-2), headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20130401 Firefox/31.0"})
     data = urlopen(req).read()
     rounds_data = json.loads(data)
     rounds_randomness.append(rounds_data["randomness"])
 
 # Convert List to String and String to Binary 
-text = "".join(rounds_randomness)
-def toBinary(txt):
-  m = ""
-  for i in txt:
-    m += (format(ord(i),"07b"))
-  return m
-binary_text = toBinary(text)
-print(binary_text)
+hex_text = "".join(rounds_randomness)
+# print(hex_text)
+scale = 16
+num_of_bits = 8
+bin_text = bin(int(hex_text, scale))[2:].zfill(num_of_bits)
+# print(bin_text)
 
 # Calculation Zeros and Ones Max Consecutive 
 max_zeros = 0
 current_zeros = 0
 max_ones = 0
 current_ones = 0
-for i in binary_text:
+for i in bin_text:
     if i == "0":
       current_zeros += 1
       if current_zeros > max_zeros:
