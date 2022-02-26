@@ -24,7 +24,6 @@ struct student {
 
 struct student *head; 
 
-
 void add(int am, char name[30], char surname[30]) {
     struct student *pts;
     pts = malloc(sizeof(struct student));
