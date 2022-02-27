@@ -88,19 +88,17 @@ int main() {
     // How many times there is an item in the array
     int num2;
     int in_array2 = 0;
-    int how_many = 0;
     printf("Give an integer number: \n");
     scanf("%d", &num2);
     for (i = 0; i < len_a; i++) {
         if (num2 == a[i]) {
-            in_array2 = 1;
-            how_many++;
+            in_array2 += 1;
         }
     }
     if (in_array2 == 0) {
         printf("The number %d doesn't exist in 'a' array...\n", num2);
     } else {
-        printf("The number %d EXISTS in 'a' array and exists %d times!\n", num2, how_many);
+        printf("The number %d EXISTS in 'a' array and exists %d times!\n", num2, in_array2);
     }
 
 
