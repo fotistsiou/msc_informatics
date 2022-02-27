@@ -26,14 +26,14 @@ struct Book {
 int main() {
 
     struct Book Book1;
-    strcpy( Book1.title, "Programming in C");
-    strcpy( Book1.author, "Fotis Tsioumas");
-    strcpy( Book1.subject, "Basic steps in C programming language");
+    strcpy(Book1.title, "Programming in C");
+    strcpy(Book1.author, "Fotis Tsioumas");
+    strcpy(Book1.subject, "Basic steps in C programming language");
     Book1.book_id = 12345;
-    printf( "Book1 title : %s\n", Book1.title);
-    printf( "Book1 author : %s\n", Book1.author);
-    printf( "Book1 subject : %s\n", Book1.subject);
-    printf( "Book1 book_id : %d\n", Book1.book_id);
+    printf("Book1 title : %s\n", Book1.title);
+    printf("Book1 author : %s\n", Book1.author);
+    printf("Book1 subject : %s\n", Book1.subject);
+    printf("Book1 book_id : %d\n", Book1.book_id);
     
 
     return 0;
