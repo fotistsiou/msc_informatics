@@ -19,11 +19,17 @@ int main() {
         Each variable corresponds to a memory location.
         Each memory location has a unique address in memory.
         With "&" we can access in the address of a variable in memory.
+        In a pointer we save the address of a variable to access its value through the pointer.
     */
-    int var1;
-    var1 = 15;
-    printf("var1 = %d\n", var1);
-    printf("Address of var1 in memory: %x\n", &var1); 
+    int var;
+    var = 15;
+    int *ptr;
+    ptr = &var;
+    printf("var = %d\n", var);
+    printf("Address of var in memory = %d\n", &var);
+    printf("Print var with use pointer = %d\n", *ptr);
+    printf("Print address of var in memory with use pointer = %d\n", ptr);
+
 
     return 0;
 }
