@@ -71,15 +71,15 @@ int main() {
 		scanf("%d", &num);
 		if (num == 1) {
 			printf("Enter the name:");
-            		scanf("%s", name);
-            		printf("Enter the age:");
-	            	scanf("%d", &age);
-	            	printf("Enter the gender:");
-	            	scanf("%s", gender);
-	            	printf("Enter the desease:");
-	            	scanf("%s", disease);
-	            	printf("Enter the date:");
-	            	scanf("%s", date);
+            scanf("%s", name);
+            printf("Enter the age:");
+            scanf("%d", &age);
+            printf("Enter the gender:");
+            scanf("%s", gender);
+            printf("Enter the desease:");
+            scanf("%s", disease);
+            printf("Enter the date:");
+            scanf("%s", date);
 			add(name, age, gender, disease, date);
 		} else if (num == 2) {
 			count();
