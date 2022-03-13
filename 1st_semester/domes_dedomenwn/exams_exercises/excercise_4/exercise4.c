@@ -8,7 +8,6 @@
 // Start Code //
 
 #include <stdio.h>
-#include <stdlib.h>
 
 #define STACK_SIZE 10
 #define TRUE 1
