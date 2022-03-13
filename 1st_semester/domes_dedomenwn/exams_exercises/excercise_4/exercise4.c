@@ -14,24 +14,20 @@
 #define TRUE 1
 #define FALSE 0
 
-typedef int elem;
-
 struct stack {
-    elem array[STACK_SIZE];
+    int array[STACK_SIZE];
     int top;
 };
 
-typedef struct stack STACK;
-
-void ST_init(STACK *s);
-int ST_empty(STACK s);
-int ST_full(STACK s);
-int ST_push(STACK *s, elem x);
-int ST_pop(STACK *s, elem *x);
+void ST_init(struct stack *s);
+int ST_empty(struct stack s);
+int ST_full(struct stack s);
+int ST_push(struct stack *s, int x);
+int ST_pop(struct stack *s, int *x);
 
 int main() {
     int num, elem, i;
-    STACK st;
+    struct stack st;
 
     ST_init(&st);
     while (1) {
@@ -66,19 +62,19 @@ int main() {
     }
 }
 
-void ST_init(STACK *s) {
+void ST_init(struct stack *s) {
     s->top = -1;
 }
 
-int ST_empty(STACK s){
+int ST_empty(struct stack s){
     return s.top == -1;
 }
 
-int ST_full(STACK s){
+int ST_full(struct stack s){
     return s.top == STACK_SIZE-1;
 }
 
-int ST_push(STACK *s, elem x){
+int ST_push(struct stack *s, int x){
     if (ST_full(*s)) {
         return FALSE;
     } else {
@@ -88,7 +84,7 @@ int ST_push(STACK *s, elem x){
     }
 }
 
-int ST_pop(STACK *s, elem *x){
+int ST_pop(struct stack *s, int *x){
     if (ST_empty(*s)) {
         return FALSE;
     } else {
