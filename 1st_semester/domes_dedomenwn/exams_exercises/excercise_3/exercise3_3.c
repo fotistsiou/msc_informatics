@@ -47,15 +47,19 @@ void add(int am, char name[30], char surname[30], char father_name[30], char add
 
 void find(char les[50]) {
     struct student *tmp;
-    int result;
     tmp = head;
     if (tmp == NULL) {
+        printf("The list is empty\n");
         return;
     }
+    if (strcmp(les, tmp->lesson) == 0) {
+        printf("The following students have choses the lesson: %s\n", les);
+    } else {
+        printf("Not found students who have choosen the lesson: %s\n", les);
+    }
     while (tmp != NULL) {
-        result = strcmp(les, tmp->lesson);
-        if (result == 0) {
-            printf("AM: %d\n", tmp->am);
+        if (strcmp(les, tmp->lesson) == 0) {
+            printf("AM: %d, Full Name: %s %s, Father Name: %s, Address:%s, Telephone: %d, Mobile: %d\n\n", tmp->am, tmp->name, tmp->surname, tmp->father_name, tmp->address, tmp->telephone, tmp->mobile);
         } 
         tmp = tmp->next;
     }
