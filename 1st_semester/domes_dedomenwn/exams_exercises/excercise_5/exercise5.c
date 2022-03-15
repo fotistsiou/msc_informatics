@@ -18,8 +18,7 @@ struct node {
 struct node *head = NULL;
 
 void push(int data) {
-    struct node *newNode;
-    newNode = malloc(sizeof(struct node));
+    struct node *newNode = malloc(sizeof(struct node));
     newNode->data = data;
     newNode->next = head;
     head = newNode;

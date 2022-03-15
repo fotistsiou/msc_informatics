@@ -23,7 +23,15 @@ struct student {
     struct student *next;
 };
 
-struct student *head;
+struct lesson {
+    struct student *pointer;
+    struct lesson *next;
+};
+
+struct student *head = NULL;
+struct lesson *head_2 = NULL;
+char lesson_choice[] = "Diakrita";
+
 
 void add(int am, char name[30], char surname[30], char father_name[30], char address[50], int telephone, int mobile, char lesson[30]) {
     struct student *tmp;
@@ -36,32 +44,30 @@ void add(int am, char name[30], char surname[30], char father_name[30], char add
     tmp->telephone = telephone;
     tmp->mobile = mobile;
     strcpy(tmp->lesson, lesson);
-    if (head == NULL) {
-        tmp->next = NULL;
-        head = tmp;
-    } else {
-        tmp->next = head;
-        head = tmp;
+    tmp->next = head;
+    head = tmp;
+
+    if (strcmp(lesson_choice, tmp->lesson) == 0) {
+        struct lesson *tmp_2;
+        tmp_2 = malloc(sizeof(struct lesson));
+        tmp_2->pointer = tmp;
+        tmp_2->next = head_2;
+        head_2 = tmp_2;
     }
 }
 
-void find(char les[50]) {
-    struct student *tmp;
-    tmp = head;
-    if (tmp == NULL) {
+void find() {
+    struct lesson *tmp_2;
+    tmp_2 = head_2;
+    if (tmp_2 == NULL) {
         printf("The list is empty\n");
         return;
     }
-    if (strcmp(les, tmp->lesson) == 0) {
-        printf("The following students have choses the lesson: %s\n", les);
-    } else {
-        printf("Not found students who have choosen the lesson: %s\n", les);
-    }
-    while (tmp != NULL) {
-        if (strcmp(les, tmp->lesson) == 0) {
-            printf("AM: %d, Full Name: %s %s, Father Name: %s, Address:%s, Telephone: %d, Mobile: %d\n\n", tmp->am, tmp->name, tmp->surname, tmp->father_name, tmp->address, tmp->telephone, tmp->mobile);
+    while (tmp_2 != NULL) {
+        if (strcmp(lesson_choice, tmp_2->pointer->lesson) == 0) {
+            printf("AM: %d, Full Name: %s %s, Father Name: %s, Address:%s, Telephone: %d, Mobile: %d\n\n", tmp_2->pointer->am, tmp_2->pointer->name, tmp_2->pointer->surname, tmp_2->pointer->father_name, tmp_2->pointer->address, tmp_2->pointer->telephone, tmp_2->pointer->mobile);
         } 
-        tmp = tmp->next;
+        tmp_2 = tmp_2->next;
     }
 }
 
@@ -70,7 +76,7 @@ int main() {
     char name[30], surname[30], father_name[30], address[50], lesson[30], les[50];
     while (1) {
         printf("1.Add Student\n");
-        printf("2.Find Students who choiced a specific lesson\n");
+        printf("2.Find Students who chose Diakrita lesson\n");
         printf("3.Exit\n");
         printf("Enter the action number:");
         scanf("%d", &num);
@@ -94,9 +100,7 @@ int main() {
             add(am, name, surname, father_name, address, telephone, mobile, lesson);
         }
         else if (num == 2) {
-            printf("Enter the lesson:");
-            scanf("%s", les);
-            find(les);
+            find();
         }
         else if (num == 3) {
             return 0;
