@@ -9,15 +9,34 @@
 
 #include <stdio.h>
 
-int A[10];
-int B[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-int C[10] = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
-
 int main(){
-    for (int i = 0; i < 10; i++) {
-        A[i] = B[i] + C[i];
-        printf("A[%d] = %d\n", i, A[i]);
+
+    int arraysize ; 
+    printf("Give the arrays size\n");
+    scanf("%d", &arraysize);
+
+    while(arraysize == 0){ 
+        printf("Give the arrays size\n");
+        scanf("%d",&arraysize);
+    }   
+
+    int arrayA[arraysize], arrayB[arraysize], arrayC[arraysize];
+    
+    for(int i = 0; i < arraysize; i++){
+        printf("Give B[%d] value:\n", i);
+        scanf("%d", &arrayB[i]);
+        printf("Give C[%d] value:\n", i);
+        scanf("%d", &arrayC[i]);
+    }   
+
+    for(int i = 0; i < arraysize; i++){
+        arrayA[i] = arrayB[i] + arrayC[i];
     }
+
+    for (int i = 0; i < arraysize; i++){
+        printf("A[%d] = B[%d] + C[%d] = %d\n", i, i, i, arrayA[i]);
+    }
+
 
     return 0;
 }
