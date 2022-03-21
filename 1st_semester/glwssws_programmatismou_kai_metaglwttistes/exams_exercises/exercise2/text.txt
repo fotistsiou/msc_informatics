@@ -1,0 +1,4 @@
+var count, sum: integer92
+    average: real92
+    is_member: boolean92
+    fullname: char92
