@@ -5,7 +5,7 @@
 /* 2. Run: cd/<file_path> */
 /* 3. Run: lex <filename.l> */
 /* 4. Run: gcc lex.yy.c -o exercise2_3 */
-/* 5. Run: ./exercise2_3 < text.txt */
+/* 5. Run: ./exercise2_3 < text.txt or ./exercise2_3 <custom declaration of variables> */ 
 /* For check your code press "Ctrl + D" */
 /* For exit of program press "Ctrl + C" */
 
