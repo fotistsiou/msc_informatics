@@ -15,9 +15,11 @@ int main(int argc, char *argv[]) {
 
   printf("I'm original process with PID=%d, PPID=%d.\n", getpid(), getppid());
 
-  num = fork(); // "fork()" return child's PID for the parent process and 0 for child process.
+  num = fork(); // "fork()" return -1 if the proccess failed or child's PID for the parent process and 0 for the child process.
 
-  if (num != 0) {
+  if (num == -1) {
+    printf("The proccess of failed!");
+  } else if (num != 0) {
     printf("I'm the parent process with PID=%d, PPID=%d.\n", getpid(), getppid());
     printf("I have a child with PID=%d.\n", num);
   } else {
@@ -26,4 +28,5 @@ int main(int argc, char *argv[]) {
 
   printf("PID %d terminates.\n", getpid());
 
+  return 0;
 }
