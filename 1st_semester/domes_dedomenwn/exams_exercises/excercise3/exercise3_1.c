@@ -15,15 +15,13 @@ struct student {
     char surname[30];
     char father_name[30];
     char address[50];
-    int telephone;
-    int mobile;
+    char telephone[12];
+    char mobile[12];
     char lesson[30];
 };
 
 int main() {
-
     struct student s1;
-
     printf("1st Student\n");
     printf("Enter am:");
     scanf("%d", &s1.am);
@@ -36,13 +34,13 @@ int main() {
     printf("Enter address:");
     scanf("%s", s1.address);
     printf("Enter telephone:");
-    scanf("%d", &s1.telephone);
+    scanf("%s", s1.telephone);
     printf("Enter mobile:");
-    scanf("%d", &s1.mobile);
+    scanf("%s", s1.mobile);
     printf("Enter lesson:");
     scanf("%s", s1.lesson);
 
-    printf("First Student: %d, %s %s, %s, %s, %d, %d, %s\n", s1.am, s1.name, s1.surname, s1.father_name, s1.address, s1.telephone, s1.mobile, s1.lesson);
+    printf("First Student: %d, %s %s, %s, %s, %s, %s, %s\n", s1.am, s1.name, s1.surname, s1.father_name, s1.address, s1.telephone, s1.mobile, s1.lesson);
 
     return 0;
 }

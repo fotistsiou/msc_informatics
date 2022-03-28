@@ -17,8 +17,8 @@ struct student {
     char surname[30];
     char father_name[30];
     char address[50];
-    int telephone;
-    int mobile;
+    char telephone[12];
+    char mobile[12];
     char lesson[30];
     struct student *next;
 };
@@ -30,10 +30,10 @@ struct lesson {
 
 struct student *head = NULL;
 struct lesson *head_2 = NULL;
-char lesson_choice[] = "Diakrita";
+char lesson_choice[] = "Domes_Dedomenwn";
 
 
-void add(int am, char name[30], char surname[30], char father_name[30], char address[50], int telephone, int mobile, char lesson[30]) {
+void add(int am, char name[30], char surname[30], char father_name[30], char address[50], char telephone[12], char mobile[12], char lesson[30]) {
     struct student *tmp;
     tmp = malloc(sizeof(struct student));
     tmp->am = am;
@@ -41,8 +41,8 @@ void add(int am, char name[30], char surname[30], char father_name[30], char add
     strcpy(tmp->surname, surname);
     strcpy(tmp->father_name, father_name);
     strcpy(tmp->address, address);
-    tmp->telephone = telephone;
-    tmp->mobile = mobile;
+    strcpy(tmp->telephone, telephone);
+    strcpy(tmp->mobile, mobile);
     strcpy(tmp->lesson, lesson);
     tmp->next = head;
     head = tmp;
@@ -65,15 +65,15 @@ void find() {
     }
     while (tmp_2 != NULL) {
         if (strcmp(lesson_choice, tmp_2->pointer->lesson) == 0) {
-            printf("AM: %d, Full Name: %s %s, Father Name: %s, Address:%s, Telephone: %d, Mobile: %d\n\n", tmp_2->pointer->am, tmp_2->pointer->name, tmp_2->pointer->surname, tmp_2->pointer->father_name, tmp_2->pointer->address, tmp_2->pointer->telephone, tmp_2->pointer->mobile);
+            printf("AM: %d, Full Name: %s %s, Father Name: %s, Address:%s, Telephone: %s, Mobile: %s\n\n", tmp_2->pointer->am, tmp_2->pointer->name, tmp_2->pointer->surname, tmp_2->pointer->father_name, tmp_2->pointer->address, tmp_2->pointer->telephone, tmp_2->pointer->mobile);
         } 
         tmp_2 = tmp_2->next;
     }
 }
 
 int main() {
-    int num, am, telephone, mobile;
-    char name[30], surname[30], father_name[30], address[50], lesson[30], les[50];
+    int num, am;
+    char name[30], surname[30], father_name[30], address[50], telephone[12], mobile[12], lesson[30], les[50];
     while (1) {
         printf("1.Add Student\n");
         printf("2.Find Students who chose Diakrita lesson\n");
@@ -92,9 +92,9 @@ int main() {
             printf("Enter the student's address:");
             scanf("%s", address);
             printf("Enter the student's telephone:");
-            scanf("%d", &telephone);
+            scanf("%s", telephone);
             printf("Enter the student's mobile:");
-            scanf("%d", &mobile);
+            scanf("%s", mobile);
             printf("Enter the student's lesson:");
             scanf("%s", lesson);
             add(am, name, surname, father_name, address, telephone, mobile, lesson);

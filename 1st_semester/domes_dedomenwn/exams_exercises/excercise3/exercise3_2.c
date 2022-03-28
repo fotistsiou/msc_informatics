@@ -15,8 +15,8 @@ struct student {
     char surname[30];
     char father_name[30];
     char address[50];
-    int telephone;
-    int mobile;
+    char telephone[12];
+    char mobile[12];
     char lesson[30];
 };
 
@@ -25,7 +25,7 @@ int main() {
     int num;
     printf("Give the number of students\n");
     scanf("%d", &num);
-    struct student s[num];    
+    struct student s[num];
 
     for (int i = 0; i < num; i++) {
         printf("%d Student\n", i+1);
@@ -40,16 +40,16 @@ int main() {
         printf("Enter address:");
         scanf("%s", s[i].address);
         printf("Enter telephone:");
-        scanf("%d", &s[i].telephone);
+        scanf("%s", s[i].telephone);
         printf("Enter mobile:");
-        scanf("%d", &s[i].mobile);
+        scanf("%s", s[i].mobile);
         printf("Enter lesson:");
         scanf("%s", s[i].lesson);
     }
-    
-    for (int i = 0; i < num; i++) {
-        printf("Student: %d, %s %s, %s, %s, %d, %d, %s\n", s[i].am, s[i].name, s[i].surname, s[i].father_name, s[i].address, s[i].telephone, s[i].mobile, s[i].lesson);
-    }
 
+    for (int i = 0; i < num; i++) {
+        printf("Student: %d, %s %s, %s, %s, %s, %s, %s\n", s[i].am, s[i].name, s[i].surname, s[i].father_name, s[i].address, s[i].telephone, s[i].mobile, s[i].lesson);
+    }
+    
     return 0;
 }

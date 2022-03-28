@@ -1,4 +1,4 @@
-// Guidelines from Fotis K. Tsioumas //
+// Guidelines from Fotis K. Tsioumas//
 
 // In order to run this code, have to follow below steps:
 // 1. Open the terminal
@@ -13,12 +13,7 @@ int main(){
 
     int arraysize ; 
     printf("Give the arrays size\n");
-    scanf("%d", &arraysize);
-
-    while(arraysize == 0){ 
-        printf("Give the arrays size\n");
-        scanf("%d",&arraysize);
-    }   
+    scanf("%d", &arraysize);  
 
     int arrayA[arraysize], arrayB[arraysize], arrayC[arraysize];
     
@@ -31,12 +26,8 @@ int main(){
 
     for(int i = 0; i < arraysize; i++){
         arrayA[i] = arrayB[i] + arrayC[i];
-    }
-
-    for (int i = 0; i < arraysize; i++){
         printf("A[%d] = B[%d] + C[%d] = %d\n", i, i, i, arrayA[i]);
     }
-
 
     return 0;
 }
