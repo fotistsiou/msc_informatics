@@ -1,0 +1,16 @@
+Table Instructor (ID, name, dept_name, salary):
+
+primary key -> ID 
+foreign key -> dept_name
+
+Table Teaches (ID, course_id, sec_id, semester, year):
+primary key -> ID + course_id + sec_id + semester + year
+foreign key -> course_id + sec_id + semester + year
+
+Table Course (course_id, title, dept_name, credits):
+primary key -> course_id
+foreign key -> dept_name
+
+Table Prereq (course_id, prereq_id):
+primary key -> course_id + prereq_id
+foreign key -> course_id + prereq_id

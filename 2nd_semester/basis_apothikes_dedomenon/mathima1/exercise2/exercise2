@@ -1,0 +1,17 @@
+2. i)
+
+Table User:
+primary key -> username 
+foreign key -> username
+
+Table Groups:
+primary key -> groupname
+foreign key -> groupname + username
+
+Table Groups-Members:
+primary key -> groupname + username
+foreign key -> groupname + username
+
+Table Friend-Request:
+primary key -> from + to  
+foreign key -> from + to 
