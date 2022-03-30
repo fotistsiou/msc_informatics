@@ -1,0 +1,23 @@
+- Connect as postgres user
+  fotistsiou@fotistsiou:~$ sudo -i -u postgres psql
+
+- Create a role
+  postgres=# CREATE ROLE fotistsiou SUPERUSER LOGIN PASSWORD '2410';
+  postgres=# \du -> print all users
+  fotistsiou@fotistsiou:~$ sudo -u postgres dropuser fotistsiou -e -> drop a user
+
+- Create a database
+  postgres-# CREATE DATABASE friend_network WITH OWNER=fotistsiou ENCODING=utf8;
+  postgres-# \l -> print all databases
+  postgres=# DROP DATABASE friend_network; -> drop a database
+   
+- Create a table
+  postgres=# CREATE TABLE users( 
+                username varchar(30) PRIMARY KEY, 
+                fullname varchar(30), 
+                email varchar(50), 
+                gender varchar(10), 
+                birthdate DATE
+             );
+  postgres=# \dt -> print all tables
+   
