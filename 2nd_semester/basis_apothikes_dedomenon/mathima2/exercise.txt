@@ -10,14 +10,14 @@
   postgres-# CREATE DATABASE friend_network WITH OWNER=fotistsiou ENCODING=utf8;
   postgres-# \l -> print all databases
   postgres=# DROP DATABASE friend_network; -> drop a database
+  postgres-# \c friend_network; -> enter to the database
    
 - Create a table
-  postgres=# CREATE TABLE users( 
-                username varchar(30) PRIMARY KEY, 
-                fullname varchar(30), 
-                email varchar(50), 
-                gender varchar(10), 
-                birthdate DATE
-             );
-  postgres=# \dt -> print all tables
-   
+  friend_network=#  CREATE TABLE users( 
+                          username varchar(30) PRIMARY KEY, 
+                          fullname varchar(30), 
+                          email varchar(50), 
+                          gender varchar(10), 
+                          birthdate DATE
+                    );
+  friend_network=# \dt -> print all tables
