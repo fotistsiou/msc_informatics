@@ -15,7 +15,7 @@ public class Main {
         student1 = new Student(); // Instantiation object. student1 -> pointer (not null)
         student1.name = "Fotis"; // Define the student1's name
         student1.email = "tsioumas@outlook.com"; // // Define the student1's email
-        student1.AM = "MPPL12345"; // Define the student1's AM
+        student1.AM = "MPPL01234"; // Define the student1's AM
         student1.changeEmail("fotis.tsioumas@outlook.com"); // Use the changeEmail() method from Human class
         student1.grade("Object Oriented Programming with Java", 10); // Use the grade() method from Student class
     }
