@@ -11,8 +11,7 @@
 
 int main(int argc, char *argv[]) {
 
-  pid_t num;
-  int i;
+  int i, num;
 
   if (fork() != 0) {
     printf("I'm the parent. PID=%d, PPID=%d.\n", getpid(), getppid());
