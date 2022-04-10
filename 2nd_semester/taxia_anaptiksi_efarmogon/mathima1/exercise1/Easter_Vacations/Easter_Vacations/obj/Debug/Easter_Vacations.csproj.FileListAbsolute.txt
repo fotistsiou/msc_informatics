@@ -1,0 +1,17 @@
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\bin\Debug\Easter_Vacations.exe.config
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\bin\Debug\Easter_Vacations.exe
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\bin\Debug\Easter_Vacations.pdb
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.csproj.AssemblyReference.cache
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.csproj.SuggestedBindingRedirects.cache
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.Form1.resources
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.Form2.resources
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.Form3.resources
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.Form4.resources
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.Form5.resources
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.Form6.resources
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.Form7.resources
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.Properties.Resources.resources
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.csproj.GenerateResource.cache
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.csproj.CoreCompileInputs.cache
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.exe
+C:\Users\fotistsiou_personal\source\repos\Easter_Vacations\Easter_Vacations\obj\Debug\Easter_Vacations.pdb
