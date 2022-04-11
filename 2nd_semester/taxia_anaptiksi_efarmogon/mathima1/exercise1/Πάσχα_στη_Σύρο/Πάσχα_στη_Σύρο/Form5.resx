@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Αν ζήσει κανείς το Πάσχα στη Σύρο, θα βιώσει μια αξέχαστη εμπειρία. Εδώ, στην «καρδιά» του Αιγαίου, η αρμονική συνύπαρξη ορθόδοξων και καθολικών σηματοδοτεί το νησί τούτο, που 'χει τις χάρες όλες...
+Είναι μία από τις ελάχιστες γωνιές στον κόσμο όπου δύο διαφορετικές χριστιανικές κοινότητες, των καθολικών και των ορθοδόξων, γιορτάζουν ταυτόχρονα το Πάσχα με κατάνυξη, παραμερίζοντας τις όποιες θρησκευτικές διαφορές τους (και ανεξάρτητα από το πότε πέφτει το Πάσχα των καθολικών).
+Όλη τη Μεγάλη Εβδομάδα, οι νοικοκυρές ετοιμάζουν τα πασχαλινά κουλουράκια και τα τσουρέκια κι οι γειτονιές μοσχομυρίζουν από το άρωμά τους. Τη Μεγάλη Τρίτη τα πρωτεία έχει η εκκλησία του Αγίου Νικολάου (του πλούσιου), στη συνοικία Βαπόρια, με τη φημισμένη χορωδία της. Το βράδυ της Μεγάλης Πέμπτης, στους ορθόδοξους ναούς της πόλης, αφού τελειώσουν τα 12 Ευαγγέλια, τα κορίτσια αναλαμβάνουν να στολίσουν τον επιτάφιο.
+Τη Μεγάλη Παρασκευή, γύρω στις 9.30-10, γίνεται η περιφορά των ορθόδοξων επιταφίων από τους ναούς της Μεταμόρφωσης (της Μητρόπολης), της Κοίμησης της Θεοτόκου και του Αγίου Νικολάου, στα γραφικά δρομάκια της πόλης...
+Οι τρεις αυτοί επιτάφιοι (τα επιτάφια, όπως τα λένε εδώ), συναντιούνται στην πλατεία Μιαούλη μπροστά από το Δημαρχείο, όπου γίνεται κοινή δέηση και ακούγονται ύμνοι από τη Χορωδία του Αγίου Νικολάου και την Μπάντα του Δήμου. Ένα θέαμα μοναδικό! Ο επιτάφιος των καθολικών από την εκκλησία της Μεταμόρφωσης βγαίνει νωρίτερα, γύρω στις 20.30.
+Αν δεν ακολουθήσουμε κάποιο επιτάφιο, καλό είναι να πιάσουμε θέση στα σκαλιά του Δημαρχείου, από όπου θα παρακολουθήσουμε τα δρώμενα. Αν πάλι θέλουμε ηρεμία και κατάνυξη, θα ανηφορίσουμε ως το μοναδικό ορθόδοξο μοναστήρι του νησιού, τη Μονή Αγίας Βαρβάρας, πάνω από το Κίνι. Η λειτουργία ξεκινά γύρω στις 16.00 και η περιφορά του επιταφίου γύρω στις 17.00. Ο επιτάφιος βγαίνει έξω από το μοναστήρι, στα ολάνθιστα μονοπάτια του βουνού.</value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Αλλιώτικη εμπειρία είναι και η περιφορά του επιταφίου στην Ανω Σύρα, που γίνεται από δύο καθολικές ενορίες: του Καθεδρικού ναού του Αγίου Γεωργίου (Σαν Τζώρτζη) και του Αγίου Σεβαστιανού.
+Γύρω στις 20.00 αρχίζει το τελετουργικό και έπειτα γίνεται η περιφορά των επιταφίων στα φρεσκοασβεστωμένα δρομάκια του οικισμού. Μπροστά από τον επιτάφιο ένας άντρας κρατά το σταυρό με στεφάνι από λουλούδια και λευκές λωρίδες υφάσματος, ενώ ακολουθούν τα ξύλινα κοντάρια με αναρτημένα αντικείμενα - σύμβολα από τη σύλληψη ως τη Σταύρωση του Χριστού (τα 30 αργύρια, το σφουγγάρι, τα αγκάθινο στεφάνι, ο κόκκινος χιτώνας.).
+Έπειτα, έρχεται η εικόνα της Παναγίας (με πονεμένη μορφή). Καθώς η πομπή περνά από τα σπίτια, οι κάτοικοι ραίνουν τον επιτάφιο με λουλούδια και αρώματα, ενώ η χορωδία θα ψέλνει ύμνους της Μεγάλης Παρασκευής.
+Μετά τον Επιτάφιο, θα καταλήξετε με την παρέα σας σε κάποιο από τα ουζερί ή τα ταβερνάκια της Ανω Σύρας για θαλασσινά και μεζεδάκια.</value>
+  </data>
+</root>
