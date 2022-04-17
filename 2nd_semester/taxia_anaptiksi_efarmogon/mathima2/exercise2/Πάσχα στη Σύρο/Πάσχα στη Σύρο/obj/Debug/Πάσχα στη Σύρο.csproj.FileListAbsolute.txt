@@ -1,0 +1,18 @@
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\bin\Debug\Πάσχα στη Σύρο.exe.config
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\bin\Debug\Πάσχα στη Σύρο.exe
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\bin\Debug\Πάσχα στη Σύρο.pdb
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα στη Σύρο.csproj.AssemblyReference.cache
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα στη Σύρο.csproj.SuggestedBindingRedirects.cache
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Form1.resources
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Form2.resources
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Form3.resources
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Form4.resources
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Form5.resources
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Form6.resources
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Form7.resources
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Properties.Resources.resources
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα στη Σύρο.csproj.GenerateResource.cache
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα στη Σύρο.csproj.CoreCompileInputs.cache
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα στη Σύρο.exe
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα στη Σύρο.pdb
+C:\Users\fotistsiou_personal\source\repos\Πάσχα στη Σύρο\Πάσχα στη Σύρο\obj\Debug\Πάσχα_στη_Σύρο.Login.resources
