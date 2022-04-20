@@ -9,4 +9,4 @@ public class Main { // I can create a "Main" class in the different packages, bu
         // If the "AM" attribute had a private access modifier, it would only be accessible within the same class
         // If the "AM" attribute had a private access modifier, it would only be accessible within the same class and the subclasses
     }
-} 
+}

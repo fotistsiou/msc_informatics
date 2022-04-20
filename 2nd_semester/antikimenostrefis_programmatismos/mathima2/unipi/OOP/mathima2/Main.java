@@ -54,8 +54,14 @@ public class Main {
          String s10 = "Hello World";
          String newString = s10.toUpperCase();
          System.out.println(newString);
-         if (s10.endsWith("World"))
-             System.out.println("What you entered ends with world");
-
+         if (s10.endsWith("World")) {
+              System.out.println("What you entered ends with world");
+         }
+         // Validation from setter for AM to start with "MPPL"
+         Scanner scanner3 = new Scanner(System.in);
+         Student s11 = new Student();
+         System.out.println("Please give a AM:");
+         s11.setAM(scanner3.next());
+         System.out.println(s11.getAM());
     }
 }

@@ -50,6 +50,8 @@ public class Student {
     public void setAM(String AM) {
         if (AM.startsWith("MPPL")) {
             this.AM = AM;
+        } else {
+            this.AM = "Wrong AM";
         }
     }
 
