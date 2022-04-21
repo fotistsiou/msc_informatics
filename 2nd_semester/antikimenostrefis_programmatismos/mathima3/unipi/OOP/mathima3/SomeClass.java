@@ -1,4 +1,4 @@
-package unipi.OOP.mathima2;
+package unipi.OOP.mathima3;
 
 // I can not extend the Student class because Student is a final class
 public class SomeClass /* extends Student */ {

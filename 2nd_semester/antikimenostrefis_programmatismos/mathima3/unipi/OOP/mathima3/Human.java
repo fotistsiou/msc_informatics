@@ -1,4 +1,4 @@
-package unipi.OOP.mathima2;
+package unipi.OOP.mathima3;
 
 // Non-Abstract and Non-Final class with Final Method
 public class Human {

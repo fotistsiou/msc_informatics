@@ -1,4 +1,4 @@
-package unipi.OOP.mathima2;
+package unipi.OOP.mathima3;
 
 // Main is a static class
 public class Main {

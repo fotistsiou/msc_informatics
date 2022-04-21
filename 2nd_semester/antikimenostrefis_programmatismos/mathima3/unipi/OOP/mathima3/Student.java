@@ -1,4 +1,4 @@
-package unipi.OOP.mathima2;
+package unipi.OOP.mathima3;
 
 // Final class
 public final class Student extends Human {
