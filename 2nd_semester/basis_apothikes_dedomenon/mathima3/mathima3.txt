@@ -1,20 +1,38 @@
-postgres=# \l -> databases
+- Connect as postgres user:
+  fotistsiou@fotistsiou:~$ sudo -i -u postgres 
+  
+- Connect with psql tool:
+  postgres@fotistsiou:~$ psql 
 
-postgres=# \du -> users
+- Show the databases:
+  postgres=# \l  
 
-postgres=# \q -> exit
+- Show the users:
+  postgres=# \du
 
-postgres=# CREATE ROLE datamaster createdb login password '2410'; -> create role
+- Clear console:
+  postgres=# \! clear  
 
-postgres=# \! clear -> clear console
+- Exit from psql tool:
+  postgres=# \q 
 
-postgres=# CREATE DATABASE myunipi OWNER datamaster; -> create database 
+- Exit from postgreSQL:
+  exit
 
-postgres=# \c myunipi -> login database
+- Create role:
+  postgres=# CREATE ROLE datamaster createdb login password '2410'; 
 
-myunipi=# \e -> open editor
+- Create database:
+  postgres=# CREATE DATABASE myunipi OWNER datamaster;   
 
-myunipi=# \d student -> open student table schema
+- Login database:
+  postgres=# \c myunipi 
+
+- Open editor:
+  myunipi=# \e
+
+- Open student table schema
+  myunipi=# \d student 
 
 - Create department and student tables
   myunipi=# create table department (
