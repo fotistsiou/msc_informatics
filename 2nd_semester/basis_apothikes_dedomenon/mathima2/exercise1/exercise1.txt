@@ -7,16 +7,17 @@
 - Show all users:
   postgres=# \du 
   
-- Drop a user
+- Drop a user:
   fotistsiou@fotistsiou:~$ sudo -u postgres dropuser fotistsiou -e
   postgres=# DROP ROLE fotistsiou;
-- Create a database
+
+- Create a database:
   postgres-# CREATE DATABASE friend_network WITH OWNER=fotistsiou ENCODING=utf8;
 
-- Show all databases
+- Show all databases:
   postgres-# \l 
 
-- Drop a database
+- Drop a database:
   postgres=# DROP DATABASE friend_network;
 
 - Connect with a database:
