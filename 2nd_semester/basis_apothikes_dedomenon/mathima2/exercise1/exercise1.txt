@@ -32,7 +32,7 @@
                           birthdate DATE
                     );
 
-- Drop a table
+- Drop a table:
   postgres=# DROP TABLE users; 
 
 - Show all tables:                  
