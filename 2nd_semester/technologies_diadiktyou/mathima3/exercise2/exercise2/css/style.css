@@ -1,0 +1,149 @@
+/* General */
+html {
+    margin: 0; 
+    padding: 0; 
+    color: #333;
+}
+body {
+    background: linear-gradient(#FCF8F3, #8edbff);
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu */
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+}
+.menu a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+.menu a:hover {
+    background-color: #111;
+}
+.menu a:active {
+    background-color: #cfd3ce;
+    color: #333;
+}
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.content {
+    padding: 16px;
+    text-align: center;
+}
+
+/* Scrollbar Info */
+.scrollbar-info {
+    overflow-x: scroll;
+}
+
+/* Home */
+#home {
+    padding-top: 90px;
+}
+.home {
+    margin: 0;
+    text-align: center;
+}
+
+/* Destinations */
+#destinations {
+    padding-top: 75px;
+}
+.destinations h2{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.destinations ul {
+    list-style-type: none;
+    overflow: hidden;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.destinations li img {
+    width:35em;
+}
+
+/* Flights */
+#flights {
+    padding-top: 75px;
+}
+.flights table {
+    margin: auto;
+}
+.flights table, 
+.flights th, 
+.flights td {
+    border: 1px solid;
+    padding: 5px;
+}
+
+/* Air Info */
+#air-info {
+    padding-top: 75px;
+}
+.air-info div {
+    display: flex;
+    justify-content: center;   
+}
+.air-info p, 
+.air-info iframe {
+    margin: 5px;
+    padding: 5px;
+    text-align: left;
+}
+.air-info p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Travel Guides */
+#travel-guides {
+    padding-top: 75px;
+}
+.travel-guides {
+    padding-bottom: 50px;
+}
+.travel-guides p {
+    text-align: justify;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+}
+.footer p {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;        
+    color: #cfd3ce;
+}
+.footer a{
+    color: aliceblue;
+}
