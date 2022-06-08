@@ -34,6 +34,17 @@ input {
     text-align: center;
 }
 
+/* Validation */
+.success {
+    border: 2px solid #1cc261;
+}
+.error {
+    border: 2px solid #ab1c1c;
+}
+span {
+    color: #ab1c1c;
+}
+
 /* Footer */
 .footer {
     position: fixed;
@@ -51,7 +62,7 @@ input {
     padding: 0;
     width: 100%;
     line-height: 40px;
-    text-align: center;        
+    text-align: center;
     color: #cfd3ce;
 }
 .footer a{

@@ -45,6 +45,11 @@ body {
     padding: 16px;
     text-align: center;
 }
+li > a.register {
+    background-color: #a9d1e4;
+    color: #333;
+    font-weight: bold;
+}
 
 /* Scrollbar Info */
 .scrollbar-info {
@@ -149,4 +154,3 @@ body {
 .footer a{
     color: aliceblue;
 }
-
