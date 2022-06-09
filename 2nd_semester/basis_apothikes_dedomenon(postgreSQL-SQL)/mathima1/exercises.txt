@@ -1,2 +1,0 @@
-1. Find the the primary and foreign keys of instructor, teaches, course and prereq tables (page: 19)
-2. Find the the primary and foreign keys of social network table (example 2, page: 21)
