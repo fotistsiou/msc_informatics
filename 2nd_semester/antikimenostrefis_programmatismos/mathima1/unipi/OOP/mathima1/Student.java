@@ -8,6 +8,6 @@ public class Student extends Human{
 
     // void changeEmail(); -> inherited from Human
     void grade(String course, int grade){
-        System.out.println("My name is "+name+" and in course "+course+" I took: "+grade+".");
+        System.out.println("My name is "+name+" with email "+email+" and in the course "+course+" I took: "+grade+".");
     } // Student method
 }

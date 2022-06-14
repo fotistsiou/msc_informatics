@@ -8,6 +8,6 @@ public class Professor extends Human {
 
     // void changeEmail(); -> inherited from Human
     void teach(String course){
-        System.out.println("My name is "+name+" and I am teaching "+course+".");
+        System.out.println("My name is "+name+" with email "+email+" and I am teaching "+course+".");
     } // Professor method
 }
