@@ -74,7 +74,7 @@ public class Student {
 
     // Constructor for name and AM attributes with use the setter setAge()
     public Student(String AM, int age) {
-        this.AM = AM;
+        this.setAM(AM);
         this.setAge(age);
     }
 }
