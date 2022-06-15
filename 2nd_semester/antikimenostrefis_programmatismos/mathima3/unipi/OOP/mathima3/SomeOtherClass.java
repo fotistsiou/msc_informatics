@@ -11,6 +11,6 @@ public abstract class SomeOtherClass {
     }
 
     // Abstract method
-    // If there is an abstract method in a class I must also declare the class as abstract
+    // If there is an abstract method in the class I must also declare the class as abstract.
     abstract void myMethod();
 }

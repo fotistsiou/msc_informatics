@@ -1,7 +1,6 @@
 package unipi.OOP.mathima3;
 
-// I can not extend the Student class because Student is a final class
-public class SomeClass /* extends Student */ {
+public class SomeClass {
 
     // Final variable with direct initialization
     final int i = 123;
@@ -13,6 +12,6 @@ public class SomeClass /* extends Student */ {
         this.str = str;
     }
 
-    // Static final variable
+    // Static final variable with direct initialization (obligatory)
     static final String str2 = "Fotis";
 }
