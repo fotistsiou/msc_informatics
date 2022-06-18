@@ -1,8 +1,7 @@
 package unipi.OOP.mathima4;
 
-// To interface μοιάζει με abstract class με την διαφορά ότι στο interface μπορώ να βάλω μόνο abstract methods.
-// Στο interface δεν μπορώ να βάλω ούτε μη abstract methods ούτε variables.
+// An interface looks like an abstract class with the difference that an interface has only abstract methods and fields.
 public interface ISpeak {
-    // Όλες οι μεθοδοι των interfaces είναι abstract άρα είναι περοττό να δηλώσουμε την speak ως "abstract".
+    // All methods of an interface is abstract and as a result aren't defined as abstract
     void speak(String s);
 }

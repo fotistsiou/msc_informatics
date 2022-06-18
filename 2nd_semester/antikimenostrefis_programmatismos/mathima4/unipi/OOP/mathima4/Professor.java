@@ -1,14 +1,15 @@
 package unipi.OOP.mathima4;
 
 public class Professor {
-    // Βάζοντας ως παράμετρο ένα interface, ζητάμε ως παράμετρο ένα ολόκληρο object μιας κλάσης η οποία έχει κάνει implement το ISpeak interface.
+    // Put the "ISpeak" interface in the "acceptPeopleWhoSpeak" method as argument an add an alias for this interface so that all object that that can use this method to have a class that implement "ISpeak" interface.
     void acceptPeopleWhoSpeak(ISpeak speaker){
-        speaker.speak("Informatics Unipi!");
+        speaker.speak("I can speak!");
     }
 
+    // Put the "IProfContract" interface in the "acceptInCourse" method as argument an add an alias for this interface so that all object that that can use this method to have a class that implement "ISpeak" and "IRaiseLowerHand" interface.
     void acceptInCourse(IProfContract accepted){
-        accepted.speak("Informatics Unipi!");
-        accepted.raiseHand();
-        accepted.lowerHand();
+        accepted.speak("I can speak!");
+        accepted.raiseHand("I can raise my hand!");
+        accepted.lowerHand("I can lower my hand!");
     }
 }
