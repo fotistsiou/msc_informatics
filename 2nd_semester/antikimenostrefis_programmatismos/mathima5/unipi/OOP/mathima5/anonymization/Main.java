@@ -1,88 +1,96 @@
 package unipi.OOP.mathima5.anonymization;
 
 public class Main {
+    /* Methods και Class που θα χρησιμοποιηθούν μέσα στην main. */
 
-    public static void main(String[] args) {
-        /* Anonymous Object */
-
-        // Το αντικείμενο s1 της κλάσεις Student
-        Student s1 = new Student();
-        s1.am = "mppl1231";
-        doSomethingWithStudent(s1);
-        // Ένα ανώνυμο αντικείμενο της κλάσης Student
-        doSomethingWithStudent(new Student("mppl312312", "fotis@test.com"));
-        // Χρήση μιας μεθόδους της κλάσης Student από ένα ανώνυμο αντικείμενο της
-        new Student("mppl12312", "test@test.com").sayHello();
-
-
-        /* Anonymous Class */
-
-        // Ανωνυμο αντικειμενο μιας ανωνυμης κλασης
-        new Student();
-        // Ανωνυμο αντικειμενο μιας ανωνυμης κλασης με έμμεσο extend του Student (static class SomeClass extends Student {})
-        new SomeClass().sayHi_1();
-        // Ανωνυμο αντικειμενο μιας ανωνυμης κλασης, η οποία κάνει extend την κλάση Student
-        new Student("mppl2131", "no-email"){
-            void sayHi_2(){
-                System.out.println("Hi 2 from "+am);
-            }
-        }.sayHi_2();
-        // Περναμε στην doSomethingWithStudent ενα ανώνυμο αντικειμενο μιας ανωνυμης κλασης που είναι παιδί της κλάσης Student και κανει extend προσθέτοντας μια νεα μέθοδο (ΔΕΝ ΧΡΗΣΙΜΟΠΟΙΕΙΤΑΙ ΠΟΤΕ)
-        doSomethingWithStudent(
-            new Student("mppl2131", "no-email"){
-                void sayHi_3(){
-                    System.out.println("Hi 3 from "+am);
-                }
-            }
-        );
-        // Περναμε στην doSomethingWithStudent ενα ανώνυμο αντικειμενο μιας ανωνυμης κλασης που είναι παιδί της κλάσης Student και κανει extend κάνοντας override μια μεθοδο της κλάσης Student (ΧΡΗΣΙΜΟΠΟΙΕΙΤΑΙ ΣΠΑΝΙΑ)
-        doSomethingWithStudent(
-                new Student("mppl2131", "no-email"){
-                    @Override
-                    void sayHello(){
-                        System.out.println("Extended Hello from "+am);
-                    }
-                }
-        );
-
-
-        /* Anonymous Object and Class with use Interface (ΧΡΗΣΙΜΟΠΟΙΕΙΤΑΙ ΣΥΧΝΑ) */
-
-        // Το αντικείμενο s2 της κλάσεις Student, η οποιά κάνει implement το IRead interface
-        Student s2 = new Student();
-        doSomethingWithAnyoneThatReads(s2);
-        // Ενα ανωνυμο αντικειμενο μιας ανωνυμος κλασης, η οποιά κάνει implement το IRead interface
-        doSomethingWithAnyoneThatReads(new IRead() {
-            @Override
-            public void doRead(String text) {
-                System.out.println("I am Fotis that reads "+text);
-            }
-        });
-        // Μια μεταβλητή που περιέχει ένα ανωνυμο αντικειμενο μιας ανωνυμος κλασης, η οποιά κάνει implement το IRead interface
-        IRead r1 = new IRead() {
-            @Override
-            public void doRead(String text) {
-                System.out.println("I am Fotis 2 that reads "+text);
-            }
-        };
-
-    }
-
-    // Used from "Anonymous Class" (new SomeClass();)
-    static class SomeClass extends Student {
-        void sayHi_1(){
-            System.out.println("Hi 1 from SomeClass");
-        }
-    }
-
-    // Used from "Anonymous Object"
+    // Method doSomethingWithStudent() με argument ένα Student object.
     static void doSomethingWithStudent(Student s) {
         System.out.println(s);
         s.sayHello();
     }
 
-    // Used from "Anonymous Object and Class with use Interface"
+    // Static class SomeClass που κάνει extend την class Student και προσθέτει τη method sayHi_1().
+    static class SomeClass extends Student {
+        void sayHi_1(){
+            System.out.println("Hi 1 from SomeClass");
+        }
+    }
+    
+    // Method doSomethingWithAnyoneThatReads() με argument ένα IRead interface.
     static void doSomethingWithAnyoneThatReads(IRead reader){
-        reader.doRead("#C");
+        reader.doRead("Java");
+    }
+
+
+    /* Main method και χρήση anonymous classes and methods */
+
+    public static void main(String[] args) {
+        // Δημιουργία του object s1 της class Student.
+        Student s1 = new Student();
+        s1.am = "mppl1111";
+        doSomethingWithStudent(s1);
+
+        // Δημιουργία ανώνυμου object, μιας ανώνυμης class, που κάνει έμμεσα extend την class Student και χρησιμοποιεί τον δεύτερο contactor της class Student.
+        doSomethingWithStudent(
+            new Student("mppl2222", "mppl2222@unipi.gr")
+        );
+
+        // Δημιουργία ανώνυμου object, μιας ανώνυμης class, που κάνει έμμεσα extend την class Student, χρησιμοποιεί τον δεύτερο contactor της και χρησιμοποιεί την method sayHello() της class Student.
+        // Δεν μπορώ να κάνω χρήση της method doSomethingWithStudent() διότι δέχεται μόνο Student objects.
+        new Student("mppl3333", "mppl3333@unipi.gr").sayHello();
+
+        // Δημιουργία ανώνυμου object, μιας ανώνυμης class, που κάνει έμμεσα extend την class SomeClass και χρησιμοποιεί τη method sayHi_1().
+        new SomeClass().sayHi_1();
+
+        // Δημιουργία ανώνυμου object, μιας ανώνυμης class, που κάνει έμμεσα extend την class Student, χρησιμοποιεί τον δεύτερο contactor της class Student και προσθέτει τη method sayHi_2().
+        // Δεν μπορώ να χρησιμοποιήσω τη method sayHi_3() καθώς η method doSomethingWithStudent() διότι δέχεται μόνο Student objects.
+        doSomethingWithStudent(
+                new Student("mppl4444", "mppl4444@unipi.gr"){
+                    void sayHi_2(){
+                        System.out.println("Hi 2 from Student with AM: "+am+" and email: "+email);
+                    }
+                }
+        );
+
+        // Δημιουργία ανώνυμου object, μιας ανώνυμης class, που κάνει έμμεσα extend την class Student, χρησιμοποιεί τον δεύτερο contactor της class Student, προσθέτει τη method sayHi_3() και τη χρησιμοποιεί.
+        new Student("mppl5555", "mppl5555@unipi.gr"){
+            void sayHi_3(){
+                System.out.println("Hi 3 from Student with AM: "+am+" and email: "+email);
+            }
+        }.sayHi_3();
+
+        // Δημιουργία ανώνυμου object, μιας ανώνυμης class, που κάνει έμμεσα extend την class Student, χρησιμοποιεί τον δεύτερο contactor της class Student, και κάνει override τη method sayHello().
+        doSomethingWithStudent(
+            new Student("mppl6666", "mppl6666@unipi.gr"){
+                @Override
+                void sayHello(){
+                    System.out.println("Extended Hello from Student with AM: "+am+" and email: "+email);
+                }
+            }
+        );
+
+        // Το αντικείμενο s2 της κλάσεις Student.
+        // Μπορούμε το s2 να χρησιμοποιηθεί ως argument στην method doSomethingWithAnyoneThatReads() γιατί η class Student κάνει implement το IREad interface.
+        Student s2 = new Student();
+        doSomethingWithAnyoneThatReads(s2);
+
+        // Δημιουργία ανώνυμου object, μιας ανώνυμης class, η οποία κάνει implement το IRead interface.
+        doSomethingWithAnyoneThatReads(
+            new IRead() {
+                @Override
+                public void doRead(String text) {
+                    System.out.println("I am Student 2 that reads "+text);
+                }
+            }
+        );
+
+        // Δημιουργία μεταβλητής που περιέχει ανώνυμο object, μιας ανώνυμης class, η οποία κάνει implement το IRead interface.
+        IRead r1 = new IRead() {
+            @Override
+            public void doRead(String text) {
+                System.out.println("I am Student 3 that reads "+text);
+            }
+        };
+        doSomethingWithAnyoneThatReads(r1);
     }
 }
