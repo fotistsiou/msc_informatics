@@ -3,50 +3,57 @@ package unipi.OOP.mathima5.serialization;
 import java.io.*;
 
 public class Demo {
-
     public static void main(String[] args) {
-        // H serilize() φτιάχνει το αρχείο p.txt περνόντας μέσα το object p1
-        Professor p1 = new Professor();
-        p1.setName("Fotis");
-        p1.setOfficeNumber(123);
-        serilize(p1);
+        // Use serialize() method.
+        Professor p1 = new Professor(1234, "Fotis");
+        serialize(p1);
 
-        // H deserialize() παίρνει το αρχείο p.txt, το διαβάζει, μετατρέπει το περιεχόμενο σε object, το περνάει στο object s2 και απο αυτό εκτυπώνουμε το όνομα του
+        // Use deserialize() method.
         Professor p2 = deserialize("p.txt");
-        System.out.println(p2.getName());
+        System.out.println("Professor Name: "+p2.getName()+", Professor Office Number: "+p2.getOfficeNumber());
     }
 
-    static void serilize(Professor p) {
+    // Serialization is a mechanism of converting the state of an object into a byte stream.
+    static void serialize(Professor p) {
         try {
-            FileOutputStream fos = new FileOutputStream("p.txt");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(p);
-            oos.close();
-            fos.close();
+            // Saving of object in a file.
+            FileOutputStream file = new FileOutputStream("p.txt");
+            ObjectOutputStream out = new ObjectOutputStream(file);
+            // Method for serialization of object.
+            out.writeObject(p);
+            // Close file and out objects.
+            out.close();
+            file.close();
+            // Print success message.
             System.out.println("Object has been serialized");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
+            // Exception error for writeObject() method of ObjectOutputStream class
             e.printStackTrace();
         }
     }
 
+    // Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory.
     static Professor deserialize(String filename) {
         try {
-            FileInputStream fis = new FileInputStream(filename);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            Professor p = (Professor) ois.readObject();
-            ois.close();
-            fis.close();
+            // Reading the object from a file.
+            FileInputStream file = new FileInputStream(filename);
+            ObjectInputStream in = new ObjectInputStream(file);
+            // Method for deserialization of object
+            Professor p = (Professor) in.readObject();
+            // Close file and in objects.
+            in.close();
+            file.close();
+            // Print success message and return object.
+            System.out.println("Object has been deserialized");
             return p;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
+            // Exception error for readObject() method of ObjectInputStream class.
             e.printStackTrace();
+            return null;
         } catch (ClassNotFoundException e) {
+            // Exception error in case the "Professor" class wasn't found.
             e.printStackTrace();
+            return null;
         }
-        // Θα επιστέψει αυτό σε περίπτωση που αποτύχει το "return p;". Το βάζω εδώ για να μην κάνω return μέσα σε κάθε catch.
-        return null;
     }
 }

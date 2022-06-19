@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Hi 1 from SomeClass");
         }
     }
-    
+
     // Method doSomethingWithAnyoneThatReads() με argument ένα IRead interface.
     static void doSomethingWithAnyoneThatReads(IRead reader){
         reader.doRead("Java");
