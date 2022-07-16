@@ -1,0 +1,76 @@
+- Connect with "postgres" Role/User:
+  fotistsiou@fotistsiou:~$ sudo -i -u postgres
+
+- Connect to "postgres" with psql tool:
+  postgres@fotistsiou:~$ psql
+
+- Connect to "postgres" DB with "postgres" Role/User with psql tool:
+  fotistsiou@fotistsiou:~$ sudo -i -u postgres psql
+
+- Connect to a DB with a specific Role/User before connect to a DB with a Role/User:
+  fotistsiou@fotistsiou:~$ psql -h localhost -p 5432 -U fotistsiou friend_network
+
+- Exit from psql tool:
+  postgres=# \q 
+
+- Exit from connect with a Role/User:
+  postgres@fotistsiou:~$ exit
+
+-------------------------------------------------------------------------------------
+
+- Show all Role/User:
+  postgres=# \du 
+
+- Show current Role/User:
+  postgres=# select current_user;
+
+- Create a Role/User:
+  postgres=# CREATE ROLE fotistsiou SUPERUSER LOGIN PASSWORD '2410'; 
+
+- Drop a Role/User:
+  fotistsiou@fotistsiou:~$ sudo -u postgres dropuser fotistsiou -e
+  OR
+  postgres=# DROP ROLE fotistsiou;
+
+-------------------------------------------------------------------------------------
+
+- Show all DB:
+  postgres-# \l
+
+- Connect to a DB:
+  postgres-# \c friend_network
+
+- Create a DB:
+  postgres=# CREATE DATABASE myunipi OWNER datamaster;
+  OR
+  postgres-# CREATE DATABASE friend_network WITH OWNER=fotistsiou ENCODING=utf8;
+
+- Drop a DB:
+  postgres=# DROP DATABASE friend_network;
+
+-------------------------------------------------------------------------------------
+
+- Show a Table/Relation:
+  postgres=# \dt
+
+- Show schema of a Table/Relation:
+  fpostgres=# \d company
+   
+- Create a Table/Relation:
+  postgres=#  create table department (
+                dept_name varchar(20),
+                building varchar(15),
+                budget numeric(12,2) check (budget > 0),
+                primary key (dept_name) 
+              );
+
+- Drop a Table/Relation:
+  postgres=# DROP TABLE users; 
+
+-------------------------------------------------------------------------------------
+
+- Clear console:
+  postgres=# \! clear 
+
+- Open editor:
+  postgres=# \e

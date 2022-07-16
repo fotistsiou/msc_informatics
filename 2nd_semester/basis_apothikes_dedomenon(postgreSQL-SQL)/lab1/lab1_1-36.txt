@@ -1,17 +1,4 @@
-- Useful commands:
-    - Connect to Dadabase with specific Role/User:
-    fotistsiou@fotistsiou:~$ psql -h localhost -p 5432 -U fotistsiou friend_network
-
-    - Show current Role/User:
-    friend_network=# select current_user;
-
-    - Show tables/relations:
-    friend_network=# \dt
-
-    - Show schema of 'company' table:
-    friend_network=# \d company
-
-- Lab commands:
+- Lab 1 commands:
   1. fotistsiou@fotistsiou:~$ sudo -i -u postgres psql
   2. postgres=# CREATE DATABASE companydb;
   3. postgres=# \c companydb
