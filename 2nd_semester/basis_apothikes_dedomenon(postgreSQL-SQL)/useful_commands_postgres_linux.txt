@@ -1,14 +1,16 @@
+---------------- Connection and Exit with PostgreSQL ----------------
+
+- Connect to "postgres" DB with "postgres" Role/User with psql tool:
+  fotistsiou@fotistsiou:~$ sudo -i -u postgres psql
+
 - Connect with "postgres" Role/User:
   fotistsiou@fotistsiou:~$ sudo -i -u postgres
 
 - Connect to "postgres" with psql tool:
   postgres@fotistsiou:~$ psql
 
-- Connect to "postgres" DB with "postgres" Role/User with psql tool:
-  fotistsiou@fotistsiou:~$ sudo -i -u postgres psql
-
-- Connect to a DB with a specific Role/User before connect to a DB with a Role/User:
-  fotistsiou@fotistsiou:~$ psql -h localhost -p 5432 -U fotistsiou friend_network
+- Connect to a DB with a specific Role/User with psql tool:
+  postgres@fotistsiou:~$ psql -h localhost -p 5432 -U postgres myunipi
 
 - Exit from psql tool:
   postgres=# \q 
@@ -16,7 +18,7 @@
 - Exit from connect with a Role/User:
   postgres@fotistsiou:~$ exit
 
--------------------------------------------------------------------------------------
+---------------- 1. Role/User ----------------
 
 - Show all Role/User:
   postgres=# \du 
@@ -32,7 +34,7 @@
   OR
   postgres=# DROP ROLE fotistsiou;
 
--------------------------------------------------------------------------------------
+--------------- 2. DATABASE ----------------
 
 - Show all DB:
   postgres-# \l
@@ -48,7 +50,7 @@
 - Drop a DB:
   postgres=# DROP DATABASE friend_network;
 
--------------------------------------------------------------------------------------
+--------------- 3. Table/Relation ----------------
 
 - Show a Table/Relation:
   postgres=# \dt
@@ -67,7 +69,7 @@
 - Drop a Table/Relation:
   postgres=# DROP TABLE users; 
 
--------------------------------------------------------------------------------------
+--------------- General ----------------
 
 - Clear console:
   postgres=# \! clear 
