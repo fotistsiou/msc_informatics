@@ -9,8 +9,8 @@
 - Connect to "postgres" with psql tool:
   postgres@fotistsiou:~$ psql
 
-- Connect to a DB with a specific Role/User with psql tool:
-  postgres@fotistsiou:~$ psql -h localhost -p 5432 -U postgres myunipi
+- Connect to a remote host DB with a specific Role/User with psql tool:
+  fotistsiou@fotistsiou:~$ psql -h localhost -p 5432 -U postgres myunipi
 
 - Exit from psql tool:
   postgres=# \q 
@@ -52,13 +52,13 @@
 
 --------------- 3. Table/Relation ----------------
 
-- Show a Table/Relation:
+- Show list of all Tables/Relations:
   postgres=# \dt
 
-- Show schema of a Table/Relation:
-  fpostgres=# \d company
+- Show details of a Table/Relation:
+  postgres=# \d company
    
-- Create a Table/Relation:
+- Create a Table/Relation with PRIMARY KEY:
   postgres=#  create table department (
                 dept_name varchar(20),
                 building varchar(15),
@@ -66,13 +66,53 @@
                 primary key (dept_name) 
               );
 
+- Create a Table/Relation with PRIMARY KEY and FOREIGN KEY 
+(If I delete a row from 'dept_name' column of 'department' table, 
+all of fields with this value in the 'student' table will be set to null):
+  postgres=#  create table student (
+                id varchar(5),
+                name varchar(20) not null,
+                dept_name varchar(20),
+                tot_cred numeric(3,0) check (tot_cred >= 0),
+                primary key (id),
+                foreign key (dept_name) references department (dept_name) on delete set null
+              );
+
+- Create a Table/Relation with IDENTITY COLUMN (GENERATED ALWAYS AS ( generation_expr ) STORED):
+  postgres=#  create table department (
+                dept_name varchar(20),
+                building varchar(15),
+                budget numeric(12,2) check (budget > 0),
+                double_budget int generated always as (budget * 2) stored,
+                primary key (dept_name) 
+              );
+
+- Rename a column:
+  ALTER TABLE student RENAME COLUMN name TO name_student;
+
+
 - Drop a Table/Relation:
   postgres=# DROP TABLE users; 
+
+-------------- Domain ----------------
+
+- Create a domain as datatype (Only accept English lowercase characters)
+  CREATE DOMAIN my_domain AS VARCHAR(1) CHECK (VALUE ~ '^[a-f]$');
+
+-------------- Insert ----------------
+
+- Insert new row
+  INSERT INTO student VALUES ('00128', 'Zhang', 'Biology', 102);
+  OR 
+  INSERT INTO student (id, name, dept_name, tot_cred) VALUES ('00128', 'Zhang', 'Biology', 102);
 
 --------------- General ----------------
 
 - Clear console:
   postgres=# \! clear 
 
-- Open editor:
+- Open and work with editor:
   postgres=# \e
+
+- Show list of available schema:
+  \dn
