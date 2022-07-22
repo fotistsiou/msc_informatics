@@ -96,15 +96,64 @@ all of fields with this value in the 'student' table will be set to null):
 
 -------------- Domain ----------------
 
-- Create a domain as datatype (Only accept English lowercase characters)
+- Create a domain as datatype (Only accept English lowercase characters):
   CREATE DOMAIN my_domain AS VARCHAR(1) CHECK (VALUE ~ '^[a-f]$');
 
 -------------- Insert ----------------
 
-- Insert new row
+- Insert a new row:
   INSERT INTO student VALUES ('00128', 'Zhang', 'Biology', 102);
   OR 
   INSERT INTO student (id, name, dept_name, tot_cred) VALUES ('00128', 'Zhang', 'Biology', 102);
+
+-------------- Select ----------------
+
+- Simple Select:
+  SELECT dept_name FROM department WHERE budget>50000;
+
+- Select with DISTINCT (remove duplicate rows from a result):
+  SELECT DISTINCT dept_name FROM instructor;
+
+- Select with aggregated function:
+  SELECT MAX(budget) FROM department;
+
+- Select with aggregated function and column (only with use GROUP BY):
+  SELECT dept_name, avg(salary) as avg_salary
+  FROM instructor
+  GROUP BY dept_name;
+
+- Select with nested query:
+  SELECT DISTINCT T.name 
+  FROM instructor as T  
+  WHERE T.salary > (
+      SELECT MIN(salary) 
+      FROM instructor 
+      WHERE dept_name = 'Comp. Sci.'
+  );
+
+- Select with GROUP BY and HAVING 
+(HAVING for GROUP BY = WHERE for SELECT)
+(GROUP BY = DISTINCT):
+  SELECT course_id, semester, year, sec_id, avg (tot_cred)
+  FROM student, takes
+  WHERE student.ID = takes.ID and year = 2017
+  GROUP BY course_id, semester, year, sec_id
+  HAVING COUNT(student.ID) >= 2;
+
+-------------- Insert ----------------
+
+- Insert a row:
+  INSERT INTO department (dept_name, building, budget ) values ('plh', 'Taylor', '123456');
+
+-------------- Update ----------------
+
+- Update a row:
+  UPDATE department SET(building, budget) = ('room 21', 100) WHERE dept_name='plh';
+
+-------------- Delete ----------------
+
+- Delete a row:
+  DELETE FROM department WHERE dept_name = 'plh';
 
 --------------- General ----------------
 
