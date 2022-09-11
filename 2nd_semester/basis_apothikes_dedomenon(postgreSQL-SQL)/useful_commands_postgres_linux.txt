@@ -158,10 +158,11 @@ all of fields with this value in the 'student' table will be set to null):
 --------------- General ----------------
 
 - Clear console:
-  postgres=# \! clear 
+  postgres=# \! clear -> linux
+  postgres=# \! cls   -> windows
 
 - Open and work with editor:
   postgres=# \e
 
 - Show list of available schema:
-  \dn
+  postgres=# \dn
