@@ -87,6 +87,13 @@ all of fields with this value in the 'student' table will be set to null):
                 primary key (dept_name) 
               );
 
+- Create a Table/Relation with Regular Expressions and Range (IN) check:
+  postgres=#  create table test (
+                salary numeric(8,2) check (salary > 29000),
+                col1 varchar(10) check (VALUE IN ('white', 'red', 'rose', 'sparkling’)),
+                col2 varchar(5) check (col2 ~ '^[α-ω]{5}$'),
+              );
+
 - Rename a column:
   ALTER TABLE student RENAME COLUMN name TO name_student;
 
@@ -117,6 +124,12 @@ all of fields with this value in the 'student' table will be set to null):
 - Select with aggregated function:
   SELECT MAX(budget) FROM department;
 
+- Select with column alias:
+  SELECT dept_name, budget AS proipologismos FROM department ;
+
+- Select with arithmetic operation:
+  SELECT budget*2 AS double_budget FROM department;
+
 - Select with aggregated function and column (only with use GROUP BY):
   SELECT dept_name, avg(salary) as avg_salary
   FROM instructor
@@ -131,6 +144,20 @@ all of fields with this value in the 'student' table will be set to null):
       WHERE dept_name = 'Comp. Sci.'
   );
 
+- Create temporarily table and Select from this:
+  WITH teach_id AS (
+        SELECT id 
+        FROM teaches 
+        WHERE teaches.year=2018
+      )
+  SELECT instructor.name FROM instructor, teach_id 
+  WHERE instructor.id=teach_id.id;
+
+- SELECT with sorting:
+  SELECT name, dept_name 
+  FROM instructor 
+  ORDER BY name ASC, dept_name DESC;
+
 - Select with GROUP BY and HAVING 
 (HAVING for GROUP BY = WHERE for SELECT)
 (GROUP BY = DISTINCT):
@@ -139,11 +166,6 @@ all of fields with this value in the 'student' table will be set to null):
   WHERE student.ID = takes.ID and year = 2017
   GROUP BY course_id, semester, year, sec_id
   HAVING COUNT(student.ID) >= 2;
-
--------------- Insert ----------------
-
-- Insert a row:
-  INSERT INTO department (dept_name, building, budget ) values ('plh', 'Taylor', '123456');
 
 -------------- Update ----------------
 
