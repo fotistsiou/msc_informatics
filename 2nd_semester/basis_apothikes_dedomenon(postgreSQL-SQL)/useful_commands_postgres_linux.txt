@@ -106,13 +106,6 @@ all of fields with this value in the 'student' table will be set to null):
 - Create a domain as datatype (Only accept English lowercase characters):
   CREATE DOMAIN my_domain AS VARCHAR(1) CHECK (VALUE ~ '^[a-f]$');
 
--------------- Insert ----------------
-
-- Insert a new row:
-  INSERT INTO student VALUES ('00128', 'Zhang', 'Biology', 102);
-  OR 
-  INSERT INTO student (id, name, dept_name, tot_cred) VALUES ('00128', 'Zhang', 'Biology', 102);
-
 -------------- Select ----------------
 
 - Simple Select:
@@ -120,20 +113,6 @@ all of fields with this value in the 'student' table will be set to null):
 
 - Select with DISTINCT (remove duplicate rows from a result):
   SELECT DISTINCT dept_name FROM instructor;
-
-- Select with aggregated function:
-  SELECT MAX(budget) FROM department;
-
-- Select with column alias:
-  SELECT dept_name, budget AS proipologismos FROM department ;
-
-- Select with arithmetic operation:
-  SELECT budget*2 AS double_budget FROM department;
-
-- Select with aggregated function and column (only with use GROUP BY):
-  SELECT dept_name, avg(salary) as avg_salary
-  FROM instructor
-  GROUP BY dept_name;
 
 - Select with nested query:
   SELECT DISTINCT T.name 
@@ -144,7 +123,32 @@ all of fields with this value in the 'student' table will be set to null):
       WHERE dept_name = 'Comp. Sci.'
   );
 
-- Create temporarily table and Select from this:
+- Select with aggregated function:
+  SELECT MAX(budget) FROM department;
+
+- Select with column alias:
+  SELECT dept_name, budget AS proipologismos FROM department;
+
+- Select with arithmetic operation:
+  SELECT budget*2 AS double_budget FROM department;
+
+- Select with sorting:
+  SELECT name, dept_name 
+  FROM instructor 
+  ORDER BY name ASC, dept_name DESC;
+
+- Select with limit:
+  SELECT DISTINCT name FROM instructor LIMIT 5;
+
+- Select with offset:
+  SELECT DISTINCT name FROM instructor LIMIT 5 OFFSET 2;
+
+- Select with aggregated function and column (only with use GROUP BY):
+  SELECT dept_name, avg(salary) as avg_salary
+  FROM instructor
+  GROUP BY dept_name;
+
+- Create temporarily table and Select with use this:
   WITH teach_id AS (
         SELECT id 
         FROM teaches 
@@ -153,19 +157,38 @@ all of fields with this value in the 'student' table will be set to null):
   SELECT instructor.name FROM instructor, teach_id 
   WHERE instructor.id=teach_id.id;
 
-- SELECT with sorting:
-  SELECT name, dept_name 
-  FROM instructor 
-  ORDER BY name ASC, dept_name DESC;
+- Select wiht aggregated functions and use filter
+(FILTER = condition on aggregated function):
+  SELECT dept_name, budget, 
+  COUNT(*) FILTER (WHERE building='Taylor'),
+  SUM(budget) FILTER (WHERE budget>60000)
+  FROM department 
+  GROUP BY dept_name, budget;
+
 
 - Select with GROUP BY and HAVING 
 (HAVING for GROUP BY = WHERE for SELECT)
-(GROUP BY = DISTINCT):
-  SELECT course_id, semester, year, sec_id, avg (tot_cred)
+(GROUP BY = DISTINCT)
+(All courses with their information, chosen by two or more students in the same semester):
+  SELECT course_id, sec_id, semester, year, avg(tot_cred)
   FROM student, takes
-  WHERE student.ID = takes.ID and year = 2017
-  GROUP BY course_id, semester, year, sec_id
-  HAVING COUNT(student.ID) >= 2;
+  WHERE student.ID= takes.ID
+  GROUP BY course_id, sec_id, semester, year
+  HAVING count(student.ID) >= 2;
+
+-------------- Insert ----------------
+
+- Insert a new row:
+  INSERT INTO student VALUES ('00128', 'Zhang', 'Biology', 102);
+  OR 
+  INSERT INTO student (id, name, dept_name, tot_cred) VALUES ('00128', 'Zhang', 'Biology', 102);
+
+-------------- Insert ----------------
+
+- Copy data from csv to table (Insert data from 'country data.csv' to 'department table'. 
+'country data.csv' has the names of table columns in the first row (headers) 
+and cells are delimited with question mark ';'.):
+  COPY department FROM '/private/tmp/country_data.csv' DELIMITERS ';' CSV HEADER;
 
 -------------- Update ----------------
 
