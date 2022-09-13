@@ -7,7 +7,7 @@
 4.a.
     SELECT 
         fl."FLcode" AS "κωδικός πτήσης", 
-        fl."FLdeparture-time" AS "κωδικός πτήσης", 
+        fl."FLdeparture-time" AS "ώρα αναχώρησης", 
         ar2."APname" AS "όνοµα αεροδροµίου άφιξης"
     FROM 
         "FlightDates" AS fld

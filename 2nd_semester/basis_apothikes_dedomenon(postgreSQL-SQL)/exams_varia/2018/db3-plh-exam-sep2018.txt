@@ -1,0 +1,44 @@
+1.
+
+2.
+
+3.a.
+    SELECT 
+        a."NAME" AS "όνοµα ηθοποιού",
+        f."TITLE" AS "τίτλος ταινίας"
+    FROM
+        "ACTOR" AS a
+    JOIN
+        "CAST" AS c
+    ON
+        c."ACTOR_ID" = a."ID"
+    JOIN
+        "FILM" AS f
+    ON
+        c."FILM_ID" = f."ID" 
+    WHERE
+        f."YEAR" = '2018';
+
+3.b.
+    SELECT 
+        a."GENDER" AS "φύλο",
+        COUNT(a."GENDER") AS "πλήθος ηθοποιών"
+    FROM
+        "ACTOR" AS a
+    GROUP BY
+        a."GENDER";
+
+3.c.
+    SELECT 
+        a."NAME" AS "όνοµα ηθοποιού",
+        COUNT(c."ACTOR_ID") AS "πλήθος ταινιών"
+    FROM
+        "ACTOR" AS a
+    JOIN
+        "CAST" AS c
+    ON
+        c."ACTOR_ID" = a."ID"
+    GROUP BY
+        a."NAME"
+    HAVING
+        COUNT(c."ACTOR_ID") >= 2;
