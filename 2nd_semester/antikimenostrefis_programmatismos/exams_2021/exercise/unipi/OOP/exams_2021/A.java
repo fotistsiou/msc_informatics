@@ -24,7 +24,7 @@ public class A extends Common implements IDoSomething{
     // Implement Abstract Interface Method
     @Override
     public String doSomething(int a) {
-        return "I am the A class and instance: '"+a+"'";
+        return "I am an A class object. I am the instance: '"+a+"'";
     }
 
     // Override toString() method

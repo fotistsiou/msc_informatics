@@ -24,6 +24,10 @@ public class Main {
         B b3 = new B("Hello World from b3", 3, true, 34567, stringofListforb3);
         System.out.println(b3.doSomething(3));
 
+        // 'D' class instance
+        D d1 = new D("Hello World from d1", 1, true);
+        System.out.println(d1);
+
         // 'C' class instance
         ArrayList myList = new ArrayList();
         C c = new C (myList);
@@ -35,6 +39,7 @@ public class Main {
         c.addItemToList(b1);
         c.addItemToList(b2);
         c.addItemToList(b3);
+        // c.addItemToList(d1); // D does not implement IDoSomething and therefore cannot be added to list c.
         System.out.println("The list has " + c.countItemsOfList() + " items:");
         c.printAllItems();
     }

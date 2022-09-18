@@ -32,7 +32,7 @@ public class B extends Common implements IDoSomething{
     // Implement Abstract Interface Method
     @Override
     public String doSomething(int a){
-        return "I am the B class and and instance: '"+a+"'";
+        return "I am a B class object. I am the instance: '"+a+"'";
     }
 
     // Override toString() method
