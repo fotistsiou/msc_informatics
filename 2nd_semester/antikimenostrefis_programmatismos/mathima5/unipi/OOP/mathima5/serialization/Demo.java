@@ -10,7 +10,7 @@ public class Demo {
 
         // Use deserialize() method.
         Professor p2 = deserialize("p.txt");
-        System.out.println("Professor Name: "+p2.getName()+", Professor Office Number: "+p2.getOfficeNumber());
+        System.out.println(p2);
     }
 
     // Serialization is a mechanism of converting the state of an object into a byte stream.

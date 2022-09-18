@@ -24,4 +24,9 @@ public class Professor implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Professor Name: "+this.getName()+", Professor Office Number: "+this.getOfficeNumber();
+    }
 }
