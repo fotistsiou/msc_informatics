@@ -10,9 +10,7 @@ public class B extends Common implements IDoSomething{
     // B's Constructors
     public B() {}
     public B(String s1, int i2, Boolean b3, int afm, String[] strings) {
-        this.setS1(s1);
-        this.setI2(i2);
-        this.setB3(b3);
+        super(s1, i2, b3);
         this.setAfm(afm);
         this.setStrings(strings);
     }
