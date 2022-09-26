@@ -95,19 +95,20 @@ window.addEventListener('load', (event) => {
         var card_number_val = card_number.value.trim();
         var card_type_val = card_type.value.trim();
         var button_submit_val = button_submit.value;
-        setTimeout(() => {
-            if (count >= 6) {
-                $.ajax({
-                    data: {name:name_val,address:address_val,country:country_val,zip:zip_val,email:email_val,tel:tel_val,card_number:card_number_val,card_type:card_type_val,button_submit:button_submit_val},
-                    type: "POST",
-                    url:"./connect.php",
-                    dataType: 'html',
-                    success: function(data){
-                        alert("Data Submited!!");
-                    }
-                });
-            }
-        }, 1000);
+        if (count >= 6) {
+            $.ajax({
+                data: {name:name_val,address:address_val,country:country_val,zip:zip_val,email:email_val,tel:tel_val,card_number:card_number_val,card_type:card_type_val,button_submit:button_submit_val},
+                type: "POST",
+                url:"./connect.php",
+                dataType: 'html',
+                success: function(data){
+                    alert("Data Submited!!");
+                }
+            });
+        } else {
+            count = 0;
+            alert("You have made some mistakes. Press OK, check your errors and try again!");
+        }
     });
 
     /* Search Section */
