@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register-login-form.css">
+    <link rel="icon" href="images/gear.jpg" type="image/jpg" sizes="10x10">
+    <script src="js/login-form.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Fotis Airlines</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register-form.html">Register</a></li>
+        </ul>
+    </div>
+    <h1>Login Form</h1>
+    <div class="search_section">
+        <h2>You can view your personal information by entering your email and password.</h2>
+        <form class="search_form" action="./php/connect.php" method="GET">
+            <fieldset><legend>Login</legend>
+                <p>
+                    <label for="email_user">Enter your email: </label>
+                    <input type="text" id="email_user" name="email_user">
+                </p>
+                <p>
+                    <label for="pass_user">Enter your password: </label>
+                    <input type="text" id="pass_user" name="pass_user">
+                </p>
+                <div class="buttons">
+                    <input type="button" name="search_btn" id="search_btn" value="Search">
+                    <input type="reset" name="clear_search" id="clear_search" value="Clear">
+                </div>
+            </fieldset>
+        </form>
+        <div id="data_search"></div>
+    </div>
+    <div class="footer">
+        <p>Developed And Designed By <a href="https://www.linkedin.com/in/fotis-tsioumas/" target="_blank">Fotis Tsioumas (<a href="mailto:fotis.tsioumas@outlook.com">fotis.tsioumas@outlook.com</a>)</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="images/gear.jpg" type="image/jpg" sizes="10x10">
+    <script src="js/index.js"></script>
+    <title>Fotis Airlines</title>
+</head>
+<body>
+    <button id="topBtn" title="Go to top">Top</button>
+    <div class="menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#flights">Flights</a></li>
+            <li><a href="#air-info">Air Info</a></li>
+            <li><a href="#travel-guides">Travel Guides</a></li>
+            <li><a href="register-form.html" class="register">Register</a></li>
+            <li><a href="login-form.html" class="register">Login</a></li>
+        </ul>
+        <div class="scrollbar-info">
+            <textarea rows="1" cols="450" readonly>Last Flights: Athens-Thessaloniki -> 12:00-14:00, Athens-Rethymno -> 12:00-14:00, Thessaloniki-Athens -> 12:00-14:00, Rethymno-Athens -> 12:00-14:00 | Last Flights: Athens-Thessaloniki -> 12:00-14:00, Athens-Rethymno -> 12:00-14:00, Thessaloniki-Athens -> 12:00-14:00, Rethymno-Athens -> 12:00-14:00 | Last Flights: Athens-Thessaloniki -> 12:00-14:00, Athens-Rethymno -> 12:00-14:00, Thessaloniki-Athens -> 12:00-14:00, Rethymno-Athens -> 12:00-14:00.</textarea>
+        </div>
+    </div>
+    <div class="content">
+        <div id="home"></div>
+        <div>
+            <h1 class="home">Fotis Airlines</h1>
+            <p>Welcome to The Best Airlines! Have a nice trip!</p>
+        </div>
+        <div id="destinations"></div>
+        <div class="destinations">
+            <h2>Destinations</h2>
+            <ul>
+                <li>
+                    <h3>Athens</h3>
+                    <img src="images/athens.jpg" alt="">
+                </li>
+                <li>
+                    <h3>Thessaloniki</h3>
+                    <img src="images/thessaloniki.jpg" alt="">
+                </li>
+                <li>
+                    <h3>Rethymno</h3>
+                    <img src="images/rethymno.jpg" alt="">
+                </li>
+            </ul>
+            <div>
+                <img src="images/map.png" alt="" usemap="#map" class="map">
+                <map name="map">
+                    <area shape="rect" coords="349,375,422,444" href="https://www.visitgreece.gr/el/mainland/attica/athens/" alt="" target="_blank">
+                    <area shape="rect" coords="237,7,357,68" href="https://www.visitgreece.gr/el/mainland/macedonia/thessaloniki/" alt="" target="_blank">
+                    <area shape="rect" coords="401,746,828,857" href="https://www.visitgreece.gr/el/islands/crete/rethymno/" alt="" target="_blank">
+                    <area shape="rect" coords="673,222,820,289" href="https://www.mjt-airport.gr/el" alt="" target="_blank">
+                </map>
+            </div>
+        </div>
+        <div id="flights"></div>
+        <div class="flights">
+            <h2>Flights</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Flight</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Athens-Thessaloniki</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>19:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Athens-Rethymno</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>19:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Thessaloniki-Athens</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>19:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Thessaloniki-Rethymno</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>19:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Rethymno-Athens</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>19:00-21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Rethymno-Thessaloniki</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>12:00-14:00</td>
+                        <td>15:00-17:00</td>
+                        <td>19:00-21:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="air-info"></div>
+        <div class="air-info">
+            <h2>Air Info</h2>
+            <h3>MITILINI AIRPORT "ODYSEAS ELITIS"</h3>
+            <h4>The airport is located 7 km far from the city center of Mitilini.</h4>
+            <div>
+                <p>
+                    <strong>Website: </strong><a href="https://www.mjt-airport.gr/en">https://www.mjt-airport.gr/en</a><br>
+                    <strong>Access</strong>: <a href="https://www.mjt-airport.gr/en/flights--more/airport-information#to--from-the-airport">https://www.mjt-airport.gr/en/flights--more/airport-information#to--from-the-airport</a><br>
+                    <strong>Contact</strong>: <a href="https://www.mjt-airport.gr/en/mjt/feedback">https://www.mjt-airport.gr/en/mjt/feedback</a><br>
+                    <strong>Telephone</strong>: +30 2251 038 700<br>
+                    <strong>Standard Time Zone</strong>: GMT/UTC +2 hours<br>
+                    <strong>Airport Code</strong>: MJT
+                </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12391.890423504765!2d26.596296589912296!3d39.061538453492226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ba5d4f0a1265b1%3A0x7fa88350b22192f1!2zzpHOtc-Bzr_OtM-Bz4zOvM65zr8gzpzPhc-EzrnOu86uzr3Ot8-C!5e0!3m2!1sel!2sgr!4v1653748601553!5m2!1sel!2sgr" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div id="travel-guides"></div>
+        <div class="travel-guides">
+            <h2>Travel Guides</h2>
+            <div>
+                <div>
+                    <h3>Athens</h3>
+                    <p>Welcome to <strong><ins>Athens</ins></strong>, <i><em>historical capital of Europe</em></i>. Welcome to the birthplace of democracy, arts, science and philosophy of western civilisation.  Home of Plato, Socrates, Pericles, Euripides, Sophocles, Aeschylus.  Athens is one of the world’s oldest cities. It’s recorded history spanning around 3.400 years and it is being inhabited since the 11th millennium B.C. E.  Today, under the shadow of Parthenon, the contemporary urban scenery of the sprawling city reflects its exciting history, its multi- cultural modern personality as well as the infrastructure and facilities. The perfect Mediterranean climate with the legendary greek sunlight, the unique combination of glorious history with modern, urban innovation, the coexistence of great culture with astonishing natural beauty, the high standard hotel accommodation, modern means of transportation such as the cutting edge modern metro, the vibrant rhythm of life, the wide choice of opportunities for shopping, dining and night life and of course the warmth of the Athenians people feature Athens as the ideal all year round city break destination. The city of Parthenon is an open air museum. A large part of the town’s historic center has been converted into a 3 km pedestrian zone, one of the largest in Europe. It leads to the major archaeological sites (“archaeological park”), reconstructing – to a large degree – the ancient landscape. Either on foot or by bike, the ‘’Grande Promenade’’ around Acropolis is an unforgettable journey through history.</p>
+                </div>
+                <div>
+                    <h3>Thessaloniki</h3>
+                    <p>The metropolis of <strong><ins>Thessaloniki</ins></strong> has a population of over a million and is <i><em>the biggest city in the northern part of Greece</em></i>. It is built by Thermaïkos and Strymonikos Gulf, on fertile grounds resting beside the Rivers of Axios, Gallikos and Loudias, as well as the lakes Koroneia and Volvi. Findings prove that Thessaloniki has been inhabited since prehistoric times, marked by multiculturalism, yet its present day modernised state is charmingly intertwined with archaeological sites, byzantine churches and other significant monuments from the past. Thessaloniki is a busy, bustling city at all times of the day but especially at night when it becomes brighter and colourful.</p>
+                </div>
+                <div>
+                    <h3>Rethymno</h3>
+                    <p><strong><ins>Rethymno</ins></strong> is located in the north end of the prefecture, built by the sea and is a city with many faces. Rethymno or Rithymna as it was once called <i><em>has been inhabited since the Later Minoan III period</em></i>. Nowadays, it keeps the elements inherited by its history (from antiquity up to now), preserving at the same time the characteristics of a modern city. You can reach Rethymno by boat from Piraeus or by plane from Athens to Chania and then drive 60 km to Rethymno.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Developed And Designed By <a href="https://www.linkedin.com/in/fotis-tsioumas/" target="_blank">Fotis Tsioumas (<a href="mailto:fotis.tsioumas@outlook.com">fotis.tsioumas@outlook.com</a>)</a></p>
+    </div>
+</body>
+</html>
