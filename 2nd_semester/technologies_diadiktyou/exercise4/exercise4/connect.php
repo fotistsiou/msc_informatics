@@ -20,7 +20,7 @@
         $tel=$_POST['tel'];
         $card_number=$_POST['card_number'];
         $card_type=$_POST['card_type'];
-        $sql = "INSERT INTO fotis_airlines(name_customer, address, country, zip_code, email_customer, tel_customer, card_number, card_type) VALUES ('".$name."','".$address."','".$country."','".$zip."','".$email."','".$tel."','".$card_number."','".$card_type."') ";
+        $sql = "INSERT INTO fotis_airlines_ex4(name_customer, address, country, zip_code, email_customer, tel_customer, card_number, card_type) VALUES ('".$name."','".$address."','".$country."','".$zip."','".$email."','".$tel."','".$card_number."','".$card_type."') ";
         $insert_data = pg_query($dbconn, $sql);
         if($insert_data) {
             echo"DATA SAVED!";
@@ -31,7 +31,7 @@
     } elseif (isset($_GET['button_search']) && $_GET['button_search']==='Search') {
         // Select a row from the db and create table with these
         $email_user=$_GET['email_user'];
-        $sql_2 = "SELECT * FROM fotis_airlines WHERE email_customer='".$email_user."'";
+        $sql_2 = "SELECT * FROM fotis_airlines_ex4 WHERE email_customer='".$email_user."'";
         $select = pg_query($dbconn, $sql_2);
         echo "<table style='border:1px solid black'>";
         echo "<tr><th>Username</th><th>Address</th><th>Country</th><th>Zip Code</th><th>Email</th><th>Telephone</th><th>Card Number</th><th>Card Type</th></tr>";

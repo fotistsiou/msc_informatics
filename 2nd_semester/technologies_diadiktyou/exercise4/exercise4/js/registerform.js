@@ -58,13 +58,13 @@ window.addEventListener('load', (event) => {
     }
     function checkTelCustomer() {
         const tel_customer_value = tel_customer.value.trim(); 
-        if (/^\+[0-9]{2}\-[0-9]{10}$/.test(tel_customer_value)) {
+        if (/^\+[0-9]{2}[0-9]{10}$/.test(tel_customer_value)) {
             tel_customer.className = "success";
             document.getElementById("errors_tel").innerText="";
             count++;
         } else {
             tel_customer.className = "error";
-            document.getElementById("errors_tel").innerText="Start with '+' and the 2 digits of your country code, \nthen enter '-' and finally 10 digits. \nEx. '+30-2101234567'.";
+            document.getElementById("errors_tel").innerText="Start with '+' and the 2 digits of your country code \nand then enter 10 digits. \nEx. '+302101234567'.";
         }
     }
     function checkCardNumber() {
