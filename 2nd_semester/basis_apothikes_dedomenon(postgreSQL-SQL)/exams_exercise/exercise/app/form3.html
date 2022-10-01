@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="icon" href="images/gear.jpg" type="image/jpg" sizes="10x10">
+    <script src="js/form3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Form3</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="form1.html">Form1</a></li>
+            <li><a href="form2.html">Form2</a></li>
+            <li><a href="form3.html">Form3</a></li>
+        </ul>
+    </div>
+    <h1>Form 3</h1>
+    <h2>Εισήγαγε, διέργαψε, δες, και ενημέρωσε αεροσκάφη.</h2>
+    <div class="forms_section">
+        <form class="insert_form" action="./php/form3.php" method="GET">
+            <fieldset>
+                <legend>Εισαγωγή Αεροσκάφους</legend>
+                <p>
+                    <label for="airc_code_i">Εισήγαγε τον κωδικό αεροσκάφους: </label>
+                    <input type="text" id="airc_code_i" name="airc_code_i">
+                </p>
+                <p>
+                    <label for="airc_name_i">Εισήγαγε το όνομα αεροσκάφους: </label>
+                    <input type="text" id="airc_name_i" name="airc_name_i">
+                </p>
+                <p>
+                    <label for="airc_capacity_i">Εισήγαγε την χωρητικότητα αεροσκάφους: </label>
+                    <input type="text" id="airc_capacity_i" name="airc_capacity_i">
+                </p>
+                <p>
+                    <label for="airc_range_i">Εισήγαγε την εμβέλεια αεροσκάφους: </label>
+                    <input type="text" id="airc_range_i" name="airc_range_i">
+                </p>
+                <p>
+                    <label for="airp_code_i">Επέλεξε το αεροδρόμιο του αεροσκάφους: </label>
+                    <select id="airp_code_i" name="airp_code_i">
+                        <option value="adf">Songjianghe</option>
+                        <option value="azd">Vidin</option>
+                        <option value="das">Itapeva</option>
+                        <option value="dgh">Tatariv</option>
+                        <option value="dza">Sofia</option>
+                        <option value="fda">Nangerang</option>
+                        <option value="fds">Jiekeng</option>
+                        <option value="ftg">Koronadal</option>
+                        <option value="hvx">Harbin</option>
+                        <option value="lvx">Iwaki</option>
+                        <option value="vxn">Moscow</option>
+                        <option value="wsa">Bromma</option>
+                        <option value="xcz">Himaya</option>
+                        <option value="xio">Skoroszyce</option>
+                        <option value="xlv">Landi Kotal</option>
+                        <option value="xvn">Jiekeng</option>
+                        <option value="zas">Jiekeng</option>
+                        <option value="zuy">Wysoka</option>
+                        <option value="zxc">Waldbillig</option>
+                        <option value="zzs">Athens</option>
+                    </select></br>
+                </p>
+                <div class="buttons">
+                    <input type="button" name="insert_btn" id="insert_btn" value="Εισαγωγή">
+                    <input type="reset" name="clear_search" id="clear_search" value="Clear">
+                </div>
+            </fieldset>
+        </form>
+        <form class="delete_form" action="./php/form3.php" method="GET">
+            <fieldset>
+                <legend>Διαγραφή Αεροσκάφους</legend>
+                <p>
+                    <label for="airc_code_d">Εισήγαγε κωδικό αεροσκάφους: </label>
+                    <input type="text" id="airc_code_d" name="airc_code_d">
+                </p>
+                <div class="buttons">
+                    <input type="button" name="delete_btn" id="delete_btn" value="Διαγραφή">
+                    <input type="reset" name="clear_search" id="clear_search" value="Clear">
+                </div>
+            </fieldset>
+        </form>
+        <form class="search_form" action="./php/form3.php" method="GET">
+            <fieldset>
+                <legend>Αναζήτηση αεροσκάφους προς επεξεργασία:</legend>
+                <p>
+                    <label for="airc_code_s">Εισήγαγε κωδικό αεροσκάφους: </label>
+                    <input type="text" id="airc_code_s" name="airc_code_s">
+                </p>
+                <div class="buttons">
+                    <input type="button" name="search_btn" id="search_btn" value="Αναζήτηση">
+                    <input type="reset" name="clear_search" id="clear_search" value="Clear">
+                </div>
+            </fieldset>
+        </form>
+        <span id="data_search"></span>
+        <form class="edit_form" action="./php/form3.php" method="GET">
+            <fieldset>
+                <legend>Επεξεργασία Αεροσκάφους</legend>
+                <p>
+                    <label for="airc_code_e">Εισήγαγε τον κωδικό αεροσκάφους: </label>
+                    <input type="text" id="airc_code_e" name="airc_code_e">
+                </p>
+                <p>
+                    <label for="airc_name_e">Εισήγαγε το όνομα αεροσκάφους: </label>
+                    <input type="text" id="airc_name_e" name="airc_name_e">
+                </p>
+                <p>
+                    <label for="airc_capacity_e">Εισήγαγε την χωρητικότητα αεροσκάφους: </label>
+                    <input type="text" id="airc_capacity_e" name="airc_capacity_e">
+                </p>
+                <p>
+                    <label for="airc_range_e">Εισήγαγε την εμβέλεια αεροσκάφους: </label>
+                    <input type="text" id="airc_range_e" name="airc_range_e">
+                </p>
+                <p>
+                    <label for="airp_code_e">Επέλεξε το αεροδρόμιο του αεροσκάφους: </label>
+                    <select id="airp_code_e" name="airp_code_e">
+                        <option value="adf">Songjianghe</option>
+                        <option value="azd">Vidin</option>
+                        <option value="das">Itapeva</option>
+                        <option value="dgh">Tatariv</option>
+                        <option value="dza">Sofia</option>
+                        <option value="fda">Nangerang</option>
+                        <option value="fds">Jiekeng</option>
+                        <option value="ftg">Koronadal</option>
+                        <option value="hvx">Harbin</option>
+                        <option value="lvx">Iwaki</option>
+                        <option value="vxn">Moscow</option>
+                        <option value="wsa">Bromma</option>
+                        <option value="xcz">Himaya</option>
+                        <option value="xio">Skoroszyce</option>
+                        <option value="xlv">Landi Kotal</option>
+                        <option value="xvn">Jiekeng</option>
+                        <option value="zas">Jiekeng</option>
+                        <option value="zuy">Wysoka</option>
+                        <option value="zxc">Waldbillig</option>
+                        <option value="zzs">Athens</option>
+                    </select></br>
+                </p>
+                <div class="buttons">
+                    <input type="button" name="edit_btn" id="edit_btn" value="Επεξεργασία">
+                    <input type="reset" name="clear_search" id="clear_search" value="Clear">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

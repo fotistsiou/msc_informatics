@@ -1,0 +1,97 @@
+/* General */
+html {
+    background: linear-gradient(#e8dfd5, #a9d1e4);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    margin: 0; 
+    padding: 0; 
+    color: #333;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Menu */
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+}
+.menu a {
+    display: block;
+    color: #cfd3ce;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+.menu a:hover {
+    background-color: #111;
+    color: #cfd3ce;
+}
+.menu a:active {
+    background-color: #cfd3ce;
+    color: #333;
+}
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.content {
+    padding: 16px;
+    text-align: center;
+}
+
+/* Title & Subtitle */
+h1 {
+    padding-top: 90px;
+}
+h2 {
+    text-align: center;
+}
+
+/* Forms */
+#forms {
+    padding-top: 75px;
+}
+.forms h2{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.forms ul {
+    list-style-type: none;
+    overflow: hidden;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.forms li {
+    margin: 5px;
+    width: 33%;
+}
+@media screen and (max-width: 821px) {
+    .forms ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+    .forms li {
+        width: 100%;
+ 
+    }
+}

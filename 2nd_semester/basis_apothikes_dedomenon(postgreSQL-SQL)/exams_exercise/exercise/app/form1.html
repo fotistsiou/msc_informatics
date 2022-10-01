@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="icon" href="images/gear.jpg" type="image/jpg" sizes="10x10">
+    <script src="js/form1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Form1</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="form1.html">Form1</a></li>
+            <li><a href="form2.html">Form2</a></li>
+            <li><a href="form3.html">Form3</a></li>
+        </ul>
+    </div>
+    <h1>Form 1</h1>
+    <h2>Μάθε ποιος ταξίδεψε την προηγούμενη ημέρα με την πτήση '16aghzXbPp' και πότε έκανε την κράτηση του, εισάγοντας εσύ την ημερομηνία.</h2>
+    <div class="search_section">
+        <form class="search_form" action="./php/form1.php" method="GET">
+            <fieldset>
+                <legend>Αναζήτηση επιβάτη και ημερομηνίας κράτησης</legend>
+                <p>
+                    <label for="date_user">Εισήγαγε μια ημερομηνία (π.χ. 2022/09/26): </label>
+                    <input type="text" id="date_user" name="date_user">
+                </p>
+                <div class="buttons">
+                    <input type="button" name="search_btn" id="search_btn" value="Αναζήτηση">
+                    <input type="reset" name="clear_search" id="clear_search" value="Clear">
+                </div>
+            </fieldset>
+        </form>
+        <div id="data_search"></div>
+    </div>
+</body>
+</html>
