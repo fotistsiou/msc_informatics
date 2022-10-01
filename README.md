@@ -1,1 +1,1 @@
-Tasks, Code and My Notes from lectures of my postgraduate!
+This particular repository includes tasks, codes and notes that I made during all the semesters of my studies at the Msc Computer Science of the University of Piraeus.
