@@ -1,1 +1,1 @@
-This particular repository includes tasks, codes and notes that I made during all the semesters of my studies at the Msc Computer Science of the University of Piraeus.
+This repository includes tasks, codes and notes that I made during all the semesters of my studies at the Msc Computer Science of the University of Piraeus.
