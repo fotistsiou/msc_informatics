@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">mppl21079_exercise1</string>
+
+    <string name="app_title">MSC Informatics App</string>
+
+    <string name="button_text">Συνοπτική Παρουσίαση</string>
+    <string name="button2_text">Σκοπός</string>
+    <string name="button3_text">Δομή και Μαθήματα</string>
+
+    <string name="act1_image">Activity 1 Image</string>
+    <string name="act2_image">Activity 2 Image</string>
+    <string name="act3_image">Activity 3 Image</string>
+    <string name="act4_image">Activity 4 Image</string>
+
+    <string name="act2_multiline1">Συνοπτική Παρουσίαση του ΠΜΣ "Πληροφορική"</string>
+    <string name="act2_multiline2">Το Πρόγραμμα Μεταπτυχιακών Σπουδών στην «Πληροφορική» έχει ως αντικείμενο την άρτια και υψηλού επιπέδου εκπαίδευση αποφοίτων τμημάτων ΑΕΙ και ΑΤΕΙ διαφόρων επιστημονικών ειδικοτήτων στις αρχές και μεθοδολογίες εφαρμογής της σύγχρονης επιστήμης της Πληροφορικής.</string>
+    <string name="act2_multiline3">Το Πρόγραμμα Μεταπτυχιακών Σπουδών στην «Πληροφορική» θεραπεύει σύγχρονα ζητήματα τεχνολογίας και εφαρμογών της επιστήμης της Πληροφορικής σε άλλες σύγχρονες επιστήμες. Το περιεχόμενο και η φυσιογνωμία του προγράμματος έχει διαμορφωθεί έτσι ώστε να ανταποκρίνεται με επιτυχία στις ιδιαίτερες επιστημονικές ανάγκες που προκαλεί η ταχύτατη εξέλιξη της Πληροφορικής και των εφαρμογών της σε ευρωπαϊκό και διεθνές επίπεδο.</string>
+    <string name="act3_multiline1">Η ενδυνάμωση του διεπιστημονικού χαρακτήρα της Πληροφορικής και η σύνδεσή της με άλλες επιστήμες με στόχο τόσο την ανάπτυξη υψηλού επιπέδου γνώσεων Πληροφορικής σε επιστήμονες άλλων ειδικοτήτων, όσο και η τροφοδότηση της ίδιας της Πληροφορικής με νέα επιστημονικά πεδία βασικής έρευνας και ανάπτυξης εφαρμογών.</string>
+    <string name="act3_multiline2">- Η προετοιμασία και εκπαίδευση καταρτισμένων και ικανών επιστημόνων και ερευνητών που θα προωθήσουν την ανάπτυξη της χώρας.</string>
+    <string name="act3_multiline3">- Η προετοιμασία για μεταπτυχιακές σπουδές διδακτορικού επιπέδου.</string>
+    <string name="act3_multiline4">- Η ανάπτυξη και διάχυση της Εφαρμοσμένης Πληροφορικής στον Ελλαδικό χώρο.</string>
+    <string name="act3_multiline5">- Η στενή συνεργασία μεταξύ της Ακαδημαϊκής Κοινότητας και των Επιχειρήσεων για την αποδοχή, χρήση και διάδοση των συστημάτων Πληροφορικής.</string>
+    <string name="act3_multiline6">- Η συνεργασία με Ελληνικούς, Ευρωπαϊκούς και Διεθνείς Επιστημονικούς Οργανισμούς, που ασχολούνται με θέματα Πληροφορικής.</string>
+
+    <string name="act4_button1">1o εξάμηνο</string>
+    <string name="act4_button2">2o εξάμηνο</string>
+    <string name="act4_button3">3o εξάμηνο</string>
+    <string name="act4_button4">4o εξάμηνο</string>
+
+    <string name="act5_text1">Εισαγωγή στην Επιστήμη των Υπολογιστών</string>
+    <string name="act5_text2">Αρχές Προγραμματισμού – Γλώσσα C, C++</string>
+    <string name="act5_text3">Δομές Δεδομένων</string>
+    <string name="act5_text4">Γλώσσες Προγραμματισμού και Μεταγλωττιστές</string>
+    <string name="act5_text5">Λειτουργικά Συστήματα</string>
+    <string name="act5_text6">Ειδικά Κεφάλαια Μαθηματικών</string>
+    <string name="act5_text7">Διακριτά Μαθηματικά</string>
+    <string name="act5_text8">Λογικός Προγραμματισμός</string>
+
+    <string name="act6_text1">Αντικειμενοστρεφής Προγραμματισμός - Τεχνολογίες Διαδικτύου</string>
+    <string name="act6_text2">Βάσεις και Αποθήκες Δεδομένων</string>
+    <string name="act6_text3">Τεχνητή Νοηµοσύνη – Έµπειρα Συστήµατα</string>
+    <string name="act6_text4">Αλληλεπίδραση Ανθρώπου – Υπολογιστή</string>
+    <string name="act6_text5">Ταχεία Ανάπτυξη Εφαρμογών</string>
+    <string name="act6_text6">Θεωρία και Εφαρµογές Γραφηµάτων</string>
+    <string name="act6_text7">Γραµµικός Προγραµµατισµός</string>
+    <string name="act6_text8">Πολυµεσικά Σήµατα και Συστήµατα</string>
+
+    <string name="act7_text1">Τεχνολογία Λογισµικού</string>
+    <string name="act7_text2">Αναγνώριση Προτύπων</string>
+    <string name="act7_text3">Αλγόριθµοι</string>
+    <string name="act7_text4">Δίκτυα Υπολογιστών</string>
+    <string name="act7_text5">Συστήματα Λογισμικού Διαχείρισης Επιχειρησιακών Πόρων (ERP)</string>
+    <string name="act7_text6">Ανάπτυξη Λογισμικού για Κινητές Συσκευές</string>
+    <string name="act7_text7">Γραφικά µε Υπολογιστές – Εικονική Πραγματικότητα</string>
+    <string name="act7_text8">Κρυπτογραφία</string>
+
+    <string name="act8_text1">Μεταπτυχιακή Διατριβή</string>
+    <string name="act8_text2">Ασφάλεια Πληροφοριών</string>
+    <string name="act8_text3">Σύγχρονα Τηλεπικοινωνιακά Δίκτυα και Υπηρεσίες</string>
+    <string name="act8_text4">Εικονικές Επιχειρήσεις</string>
+    <string name="act8_text5">Ηλεκτρονικό Επιχειρείν</string>
+    <string name="act8_text6">Ιατρική Πληροφορική</string>
+    <string name="act8_text7">Ναυτιλιακή Πληροφορική</string>
+    <string name="act8_text8">Νομική Πληροφορική</string>
+    <string name="act8_text9">Περιβαλλοντική Πληροφορική</string>
+    <string name="act8_text10">Πληροφορική στην Εκπαίδευση</string>
+    <string name="act8_text11">Γεωπληροφορική</string>
+    <string name="act8_text12">Συστημική Ανάλυση</string>
+    <string name="act8_text13">Ανάλυση Εικόνας και Εφαρμογές</string>
+</resources>
