@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">mppl21079_exercise2</string>
+
+    <string name="title">Country Database</string>
+
+    <string name="field_name">Country Name</string>
+    <string name="field_capital">Country Capital</string>
+    <string name="field_population">Country Population</string>
+
+    <string name="button_save">Save Country</string>
+    <string name="button_read">Read All Countries</string>
+    <string name="search_label_button">Write a country name and press \"SEARCH A COUNTRY\" button.</string>
+    <string name="button_search">Search A Country</string>
+    <string name="edit_label_button">Write a country name, capital and population and press \"EDIT A COUNTRY\" button.</string>
+    <string name="button_edit">Edit A Country</string>
+    <string name="delete_label_button">Write a country name and press \"DELETE A COUNTRY\" button.</string>
+    <string name="button_delete">Delete A Country</string>
+</resources>
