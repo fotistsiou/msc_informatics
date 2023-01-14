@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "73473983117",
+    "project_id": "mathima4-b0e43",
+    "storage_bucket": "mathima4-b0e43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73473983117:android:959310746d810e1a8598c4",
+        "android_client_info": {
+          "package_name": "com.unipi.android.mathima4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73473983117-gfqfb9fhgr5uuvj3au10ffn4jn9baern.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxU1UVX0Y-PcRSuUpi8R9NaLaYVLyAztA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73473983117-gfqfb9fhgr5uuvj3au10ffn4jn9baern.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
