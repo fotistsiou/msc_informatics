@@ -5,5 +5,5 @@ Programming Languages & Technologies:
 - Front-End: HTML, CSS, Javascript
 - DB: SQL, PostgreSQL, SQLite, NoSQL
 - IDE: Clion, IntelliJ, VSCode, Sublime
-- Platforms: Microsoft Visual Studio, Android Studio, MATLAB, Cisco Packet Tracer
+- Platforms: Microsoft Visual Studio, Cisco Packet Tracer, Android Studio, Firebase
 - Other: Linux, Bash, VirtualBox, XAMPP, Flex/Lex, UML
