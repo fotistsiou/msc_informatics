@@ -1,4 +1,4 @@
-This repository includes tasks, codes and notes from my studies at the M.Sc. Computer Science of the University of Piraeus.
+This repository includes tasks, codes and notes from my M.Sc. in 'Informatics' of the University of Piraeus.
 
 Programming Languages & Technologies: 
 - Back-End: C, Python, Java, C#, PHP
