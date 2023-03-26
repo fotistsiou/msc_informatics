@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class SQLiteMain {
     public static void main(String[] args) {
-        createTableAndInsertData();
+        // createTableAndInsertData();
         selectAll();
         System.out.println(login("fotis_21003","12345"));
     }
