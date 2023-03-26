@@ -9,7 +9,7 @@ public class SQLiteMain {
         System.out.println(login("fotis_21003","12345"));
     }
 
-    // SQLite with External Libraries Case: Connect with DB
+    //  Connect with SQLite DB with Use External Library
     private static Connection connect(){
         String connectionString = "jdbc:sqlite:unipi.db";
         try {
@@ -21,7 +21,7 @@ public class SQLiteMain {
         return null;
     }
 
-    // SQLite with External Libraries Case: Create Table and Insert Data
+    // Create Table and Insert Data
     private static void createTableAndInsertData(){
         try {
             // Create Connection and Statement
@@ -54,7 +54,7 @@ public class SQLiteMain {
     }
 
 
-    // SQLite with External Libraries Case: Select All Data
+    // Select All Data
     private static void selectAll(){
         try {
             Connection connection = connect();
@@ -72,7 +72,7 @@ public class SQLiteMain {
         }
     }
 
-    // Login method
+    // Login
     public static boolean login(String username,String password){
         try {
             Connection connection = connect();

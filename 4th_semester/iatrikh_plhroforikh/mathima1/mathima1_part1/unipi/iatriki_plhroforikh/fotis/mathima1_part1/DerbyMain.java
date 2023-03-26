@@ -1,15 +1,17 @@
-package unipi.iatriki_plhroforikh.fotis.mathima1_part2;
+package unipi.iatriki_plhroforikh.fotis.mathima1_part1;
 
 import java.sql.*;
 
-public class SQLiteMain {
+public class DerbyMain {
     public static void main(String[] args) {
         createTableAndInsertData();
+        selectAll();
+        System.out.println(login("fotis_21003","12345"));
     }
 
-    // Connect with SQLite DB with use Maven Build System
+    // Connect with Derby DB with Use External Library
     private static Connection connect(){
-        String connectionString = "jdbc:sqlite:unipi.db";
+        String connectionString = "jdbc:derby:unipi;create=true";
         try {
             Connection connection = DriverManager.getConnection(connectionString);
             return connection;
@@ -29,10 +31,10 @@ public class SQLiteMain {
             // Create Table
             String createTable =
                     "Create Table Students (" +
-                            "student_id TEXT primary key," +
-                            "username TEXT UNIQUE," +
-                            "password TEXT" +
-                            ")";
+                    "student_id Varchar(30) primary key," +
+                    "username Varchar(30) UNIQUE," +
+                    "password Varchar(30)" +
+                    ")";
             statement.execute(createTable);
 
             // Insert Data
@@ -52,27 +54,26 @@ public class SQLiteMain {
     }
 
 
-    // Select Students Ids with Use Form
-    public static StringBuilder selectStudentIds(){
-        StringBuilder students = new StringBuilder();
+    // Select All Data
+    private static void selectAll(){
         try {
             Connection connection = connect();
             Statement statement = connection.createStatement();
-            String selectSQL = "SELECT student_id FROM Students";
+            String selectSQL = "SELECT * FROM Students";
             ResultSet resultSet = statement.executeQuery(selectSQL);
             while (resultSet.next()){
-                students.append(resultSet.getString("student_id") + " | ");
+                System.out.println(resultSet.getString("student_id"));
+                System.out.println(resultSet.getString("username")+"\n");
             }
             statement.close();
             connection.close();
-            return students;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    // Login with Use Form
-    public static boolean login(String username,String password){
+    // Login
+    private static boolean login(String username,String password){
         try {
             Connection connection = connect();
             String selectSQL = "SELECT * FROM Students WHERE username=? AND password=?";
