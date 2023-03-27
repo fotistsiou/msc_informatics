@@ -18,7 +18,7 @@ public class DBController {
     private static String url = "jdbc:sqlite:src/main/resources/DB/covid.db";
 
     @PostMapping("/newCase")
-    public Map<String,String> insertCase(@RequestBody Map<String,String> body){
+    public Map<String,String> createCase(@RequestBody Map<String,String> body){
         int id = Integer.parseInt(body.get("id"));
         String patientName = body.get("patientName");
         int age = Integer.parseInt(body.get("age"));
@@ -49,8 +49,8 @@ public class DBController {
         return jsonMessage;
     }
 
-    @RequestMapping("/allpatients")
-    public String selectAllPatients(){
+    @RequestMapping("/allCases")
+    public String readAllCases(){
         String selectSQL = "SELECT * FROM CovidCase";
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -58,8 +58,16 @@ public class DBController {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(selectSQL);
             while (resultSet.next()){
-                stringBuilder.append(resultSet.getString("patientName"))
-                        .append(", ").append(resultSet.getString("description"))
+                 stringBuilder
+                        .append(resultSet.getInt("id"))
+                        .append(",")
+                        .append(resultSet.getString("patientName"))
+                        .append(",")
+                        .append(resultSet.getInt("age"))
+                        .append(",")
+                        .append(resultSet.getString("hospital"))
+                        .append(",")
+                        .append(resultSet.getString("description"))
                         .append(" | ");
             }
             statement.close();
@@ -70,8 +78,8 @@ public class DBController {
         return stringBuilder.toString();
     }
 
-    @GetMapping("/Case/{id}")
-    public CovidCase getCase(@PathVariable Integer id){
+    @GetMapping("/case/{id}")
+    public CovidCase readCase(@PathVariable Integer id){
         String selectSQL = "SELECT * FROM CovidCase WHERE id=?";
         CovidCase covidCase = new CovidCase();
         try {
@@ -92,6 +100,61 @@ public class DBController {
             e.printStackTrace();
         }
         return covidCase;
+    }
+
+    @PostMapping("/updateCase")
+    public Map<String,String> updateCase(@RequestBody Map<String,String> body) {
+        int id = Integer.parseInt(body.get("id"));
+        String patientName = body.get("patientName");
+        int age = Integer.parseInt(body.get("age"));
+        String hospital = body.get("hospital");
+        String description = body.get("description");
+        String updateSQL = "UPDATE CovidCase SET patientName=?, age=?, hospital=?, description=? WHERE id=?";
+        String result = null;
+        try {
+            Connection connection = DriverManager.getConnection(url);
+            PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
+            preparedStatement.setString(1,patientName);
+            preparedStatement.setInt(2,age);
+            preparedStatement.setString(3,hospital);
+            preparedStatement.setString(4,description);
+            preparedStatement.setInt(5,id);
+            if(preparedStatement.executeUpdate()>0){
+                result = "Success";
+            }else {
+                result = "Fail";
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Map<String,String> jsonMessage = new HashMap<>();
+        jsonMessage.put("Update Patient",result);
+        return jsonMessage;
+    }
+
+    @GetMapping("/deleteCase/{id}")
+    public Map<String,String> deleteCase(@PathVariable Integer id){
+        String selectSQL = "DELETE FROM CovidCase WHERE id=?";
+        String result = null;
+        try {
+            Connection connection = DriverManager.getConnection(url);
+            PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setInt(1,id);
+            if(preparedStatement.executeUpdate()>0){
+                result = "Success";
+            }else {
+                result = "Fail";
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Map<String,String> jsonMessage = new HashMap<>();
+        jsonMessage.put("Delete Patient",result);
+        return jsonMessage;
     }
 }
 
