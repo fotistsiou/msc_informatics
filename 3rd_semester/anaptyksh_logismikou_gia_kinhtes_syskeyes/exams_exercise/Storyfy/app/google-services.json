@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "647731598078",
+    "project_id": "storyfy-1c0c3",
+    "storage_bucket": "storyfy-1c0c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647731598078:android:84bc3f0b28990915fa4baf",
+        "android_client_info": {
+          "package_name": "com.unipi.android.storyfy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647731598078-l045uo3bsej8bgg7gfasf4f2498tci7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYk3TTig_BJTQ3Gxdm_8ukNgAsWpmq88k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647731598078-l045uo3bsej8bgg7gfasf4f2498tci7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

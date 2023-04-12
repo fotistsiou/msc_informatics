@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Storyfy</string>
+    <string name="welcome_text">Καλώς ήρθατε στο Storyfy!</string>
+    <string name="guides_text_1">Συμπληρώστε τα παρακάτω πεδία για να εγγραφείτε στο Storyfy.</string>
+    <string name="guides_text_2">Εάν έχετε ήδη λογαριασμό, συμπληρώστε τα παρακάτω πεδία για να συνδεθείτε στο Storyfy.</string>
+    <string name="email">Email</string>
+    <string name="password">Κωδικός</string>
+    <string name="sign_up_button">Εγγραφείτε</string>
+    <string name="sign_in_button">Συνδεθείτε</string>
+    <string name="welcome_user_text">Καλώς ήρθατε</string>
+    <string name="guides_story_text">Επιλέξτε την ιστορία που θέλετε να ακούσετε!</string>
+    <string name="story_title_1">Το Αγόρι Που Εκλαιγε Σαν Λύκος</string>
+    <string name="story_title_2">Το Χρυσό Αγγιγμα</string>
+    <string name="story_title_3">Η Αλεπού Και Τα Σταφύλια</string>
+    <string name="story_title_4">Το Περήφανο Τριαντάφυλλο</string>
+    <string name="story_title_5">Ο Αγρότισσα Και Ο Κάδος Της</string>
+    <string name="listen_button">Ακούστε την ιστορία</string>
+    <string name="story_label">"Ιστορία: "</string>
+    <string name="views_label">"Προβολές: "</string>
+    <string name="statistics_h1">Τα Στατιστικά και Οι Αγαπημένες Σας Ιστορίες!</string>
+    <string name="statistics_h2">Στατιστικά ιστοριών:</string>
+    <string name="statistics_h3">Αγαπημένες ιστορίες:</string>
+    <string name="password_confirmation">Επιβεβαίωση Κωδικού</string>
+    <string name="success_1">Ο χρήστης δημιουργήθηκε! Καλα διασκέδαση!</string>
+    <string name="success_2">Επιτυχής είσοδος! Καλα διασκέδαση!</string>
+    <string name="error_1">Ο κωδικός επιβεβαίωσης δεν είναι ίδιος με τον κωδικό πρόσβασης.</string>
+    <string name="error_2">Παρακαλώ συμπληρώστε όλα τα πεδία.</string>
+    <string name="click_button">ΤΑ ΣΤΑΤΙΣΤΙΚΑ ΜΟΥ</string>
+    <string name="speech_button">ΟΜΙΛΙΑ</string>
+    <string name="guides_statistics">Για να ελέγξετε τα στατιστικά σας, πατήστε το κουμπί \"ΟΜΙΛΙΑ\" και πείτε \"open\" ή πατήστε το κουμπί \"ΤΑ ΣΤΑΤΙΣΤΙΚΑ ΜΟΥ\".</string>
+    <string name="moral">Το Ηθικό Δίδαγμα</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Storyfy</string>
+    <string name="welcome_text">Willkommen bei Storyfy!</string>
+    <string name="guides_text_1">Füllen Sie die Felder unten aus, um sich bei Storyfy anzumelden.</string>
+    <string name="guides_text_2">Wenn Sie bereits ein Konto haben, füllen Sie die folgenden Felder aus, um sich bei Storyfy anzumelden.</string>
+    <string name="email">Email</string>
+    <string name="password">Passwort</string>
+    <string name="sign_up_button">Anmeldung</string>
+    <string name="sign_in_button">Anmelden</string>
+    <string name="welcome_user_text">Willkommen</string>
+    <string name="guides_story_text">Wählen Sie die Geschichte, die Sie hören möchten!</string>
+    <string name="story_title_1">Der Junge, der \"Wolf\" schrie</string>
+    <string name="story_title_2">Die goldene Berührung</string>
+    <string name="story_title_3">Der Fuchs und die Trauben</string>
+    <string name="story_title_4">Die stolze Rose</string>
+    <string name="story_title_5">Die Milchmagd und ihr Eimer</string>
+    <string name="listen_button">Hör dir die Geschichte an</string>
+    <string name="story_label">"Geschichte: "</string>
+    <string name="views_label">"Ansichten: "</string>
+    <string name="statistics_h1">Ihre Statistiken und Lieblingsgeschichten!</string>
+    <string name="statistics_h2">Statistik der Geschichten:</string>
+    <string name="statistics_h3">Lieblingsgeschichten:</string>
+    <string name="password_confirmation">Passwort Bestätigung</string>
+    <string name="success_1">Benutzer erstellt! Spaß haben!</string>
+    <string name="success_2">Anmeldung erfolgreich! Spaß haben!</string>
+    <string name="error_1">Das Bestätigungspasswort ist nicht dasselbe wie das Passwort.</string>
+    <string name="error_2">Bitte füllen Sie alle Felder aus.</string>
+    <string name="speech_button">SPRECHEN</string>
+    <string name="click_button">MEINE STATISTIK</string>
+    <string name="guides_statistics">Um Ihre Statistiken zu überprüfen, drücken Sie die \"SPRECHEN\"-Taste und sagen Sie \"open\" oder drücken Sie die \"MEINE STATISTIK\"-Taste.</string>
+    <string name="moral">Die Moral</string>
+</resources>

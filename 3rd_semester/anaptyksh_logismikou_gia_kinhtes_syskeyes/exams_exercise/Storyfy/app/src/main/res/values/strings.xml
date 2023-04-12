@@ -1,0 +1,36 @@
+<resources>
+    <!-- Activity 1 -->
+    <string name="app_name">Storyfy</string>
+    <string name="welcome_text">Welcome to Storyfy!</string>
+    <string name="guides_text_1">Fill out the fields below to sign up for Storyfy.</string>
+    <string name="guides_text_2">If you already have an account, fill out the fields below to log in to Storyfy.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="password_confirmation">Password Confirmation</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="success_1">User created! Have fun!</string>
+    <string name="success_2">Successful sign in! Have Fun!</string>
+    <string name="error_1">The confirmation password is not the same as the password.</string>
+    <string name="error_2">Please fill in all fields.</string>
+    <!-- Activity 2 -->
+    <string name="welcome_user_text">Welcome</string>
+    <string name="guides_story_text">Choice the story you want to listen!</string>
+    <string name="story_title_1">The Boy Who Cried Wolf</string>
+    <string name="story_title_2">The Golden Touch</string>
+    <string name="story_title_3">The Fox and the Grapes</string>
+    <string name="story_title_4">The Proud Rose</string>
+    <string name="story_title_5">The Milkmaid and Her Pail</string>
+    <string name="guides_statistics">To check your stats, press the \"SPEECH\" button and tell \"open\" or press the \"MY STATISTICS\" button.</string>
+    <string name="click_button">MY STATISTICS</string>
+    <string name="speech_button">SPEECH</string>
+    <!-- Activity 3,4,5,6,7 -->
+    <string name="listen_button">Listen to the story</string>
+    <!-- Activity 8 -->
+    <string name="story_label">Story: </string>
+    <string name="views_label">Views: </string>
+    <string name="statistics_h1">Your Statistics and Favorite Stories!</string>
+    <string name="statistics_h2">Statistics of Stories:</string>
+    <string name="statistics_h3">Favorite Stories:</string>
+    <string name="moral">The Moral</string>
+</resources>
