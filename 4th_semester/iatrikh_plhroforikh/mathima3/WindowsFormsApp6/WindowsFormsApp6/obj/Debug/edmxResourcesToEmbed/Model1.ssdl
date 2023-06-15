@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Contacts" EntityType="Model1.Store.Contacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Telephones" EntityType="Model1.Store.Telephones" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ContactTelephone" Association="Model1.Store.ContactTelephone">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Telephone" EntitySet="Telephones" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Telephones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Contact_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ContactTelephone">
+    <End Role="Contact" Type="Model1.Store.Contacts" Multiplicity="1" />
+    <End Role="Telephone" Type="Model1.Store.Telephones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Telephone">
+        <PropertyRef Name="Contact_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

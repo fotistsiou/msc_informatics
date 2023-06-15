@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Contacts" EntityType="Model1.Contact" />
+    <EntitySet Name="Telephones" EntityType="Model1.Telephone" />
+    <AssociationSet Name="ContactTelephone" Association="Model1.ContactTelephone">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Telephone" EntitySet="Telephones" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <NavigationProperty Name="Telephones" Relationship="Model1.ContactTelephone" FromRole="Contact" ToRole="Telephone" />
+  </EntityType>
+  <EntityType Name="Telephone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" Nullable="false" />
+    <NavigationProperty Name="Contact" Relationship="Model1.ContactTelephone" FromRole="Telephone" ToRole="Contact" />
+  </EntityType>
+  <Association Name="ContactTelephone">
+    <End Type="Model1.Contact" Role="Contact" Multiplicity="1" />
+    <End Type="Model1.Telephone" Role="Telephone" Multiplicity="*" />
+  </Association>
+</Schema>
