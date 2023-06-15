@@ -2,6 +2,7 @@ This repository includes tasks, codes and notes from my M.Sc. in 'Informatics' o
 
 Programming Languages & Technologies: 
 - Back-End: C, Python, Java, C#, PHP
+- Frameworks: Spring Boot, ASP.NET Core
 - Front-End: HTML, CSS, Javascript
 - DB: SQL, PostgreSQL, SQLite, NoSQL
 - IDE: Clion, IntelliJ, VSCode, Sublime
