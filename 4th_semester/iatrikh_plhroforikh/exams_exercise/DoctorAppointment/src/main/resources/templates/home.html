@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Doctor AnySite'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Doctor AnySite'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col col-md-12">
+            <div class="custom_img_card">
+                <img th:src="@{/images/img1.png}"/>
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center" sec:authorize="isAuthenticated()" th:text="'Καλώς όρισες ' + ${username} + ' στο Doctor AnySite!'"></h2>
+                        <h2 class="text-center" sec:authorize="!isAuthenticated()" th:text="'Καλώς όρισες στο Doctor AnySite!'"></h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2 text-center" sec:authorize="!isAuthenticated()">
+                            <button class="btn btn-dark" type="button">
+                                <a class="a_button" th:href="@{/register}" th:text="'Εγγραφή'"></a>
+                            </button>
+                            <button class="btn btn-dark" type="button">
+                                <a class="a_button" th:href="@{/login}" th:text="'Σύνδεση'"></a>
+                            </button>
+                        </div>
+                        <div class="d-grid gap-2 text-center" sec:authorize="isAuthenticated()">
+                            <button class="btn btn-dark" type="button" sec:authorize="hasRole('ROLE_DOCTOR')">
+                                <a class="a_button" th:href="@{/appointment/new}" th:text="'Νέο Ραντεβού'"></a>
+                            </button>
+                            <button class="btn btn-dark" type="button" sec:authorize="hasRole('ROLE_PATIENT')">
+                                <a class="a_button" th:href="@{/appointment/all}" th:text="'Νέο Ραντεβού'"></a>
+                            </button>
+                            <button class="btn btn-dark" type="button">
+                                <a class="a_button" th:href="@{'/account/info/' + ${userId}}" th:text="'Ο Λογαριασμός Μου'"></a>
+                            </button>
+                            <button class="btn btn-dark" type="button">
+                                <a class="a_button" th:href="@{'/appointment/my/' + ${userId}}" th:text="'Τα Ραντεβού Μου'"></a>
+                            </button>
+                            <form action="#" role="form" th:action="@{/logout}" method="POST">
+                                <button class="btn btn-dark" type="submit" sec:authorize="isAuthenticated()">
+                                    <a class="a_button" th:text="'Αποσύνδεση'"></a>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

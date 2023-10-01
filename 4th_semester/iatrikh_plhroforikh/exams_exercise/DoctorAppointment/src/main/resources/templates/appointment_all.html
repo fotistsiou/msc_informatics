@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Διαθέσιμα Ραντεβού'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Doctor AnySite |'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link active" aria-current="page" th:href="@{'/account/info/' + ${userId}}" th:text="'Ο Λογαριασμός Μου'"></a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link active" aria-current="page" th:href="@{'/appointment/my/' + ${userId}}" th:text="'Τα Ραντεβού Μου'"></a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <form action="#" role="form" th:action="@{/logout}" method="POST">
+                            <a class="nav-link active" aria-current="page"><button type="submit" th:text="'Αποσύνδεση'"></button></a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col col-md-12">
+            <div th:if="${param.success}">
+                <div class="alert alert-success" th:text="'Έκλεισες με επιτυχία ένα ραντεβού!'"></div>
+            </div>
+            <div class="custom_img_card">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center" th:text="'Διαθέσιμα Ραντεβού'"></h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th th:text="'#'"></th>
+                                    <th th:text="'Γιατρός'"></th>
+                                    <th th:text="'Ειδικότητα'"></th>
+                                    <th th:text="'Διεύθυνση'"></th>
+                                    <th th:text="'Ημερομηνία'"></th>
+                                    <th th:text="'Ώρα'"></th>
+                                    <th th:text="'Ενέργεια'"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="appointment, loopStat : ${appointments}" th:if="${appointment.booked == 0}">
+                                    <th th:text="${loopStat.index + 1}"></th>
+                                    <td th:text="${appointment.doctor.firstName} + ' ' + ${appointment.doctor.lastName}"></td>
+                                    <td th:text="${appointment.doctor.specialization}"></td>
+                                    <td th:text="${appointment.doctor.address}"></td>
+                                    <td th:text="${appointment.appointmentDate}"></td>
+                                    <td th:text="${appointment.appointmentTime}"></td>
+                                    <td><a th:href="@{'/appointment/' + ${appointment.id} + '/edit'}" th:text="'Κλείσε το Ραντεβού'"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <img th:src="@{/images/img8.png}"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

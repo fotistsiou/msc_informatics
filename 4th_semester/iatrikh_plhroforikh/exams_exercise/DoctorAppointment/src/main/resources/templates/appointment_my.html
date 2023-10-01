@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Τα Ραντεβού Μου'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Doctor AnySite |'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" sec:authorize="hasRole('ROLE_DOCTOR')">
+                        <a class="nav-link active" aria-current="page" th:href="@{/appointment/new}" th:text="'Νέο Ραντεβού'"></a>
+                    </li>
+                    <li class="nav-item" sec:authorize="hasRole('ROLE_PATIENT')">
+                        <a class="nav-link active" aria-current="page" th:href="@{/appointment/all}" th:text="'Νέο Ραντεβού'"></a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link active" aria-current="page" th:href="@{'/account/info/' + ${userId}}" th:text="'Ο Λογαριασμός Μου'"></a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <form action="#" role="form" th:action="@{/logout}" method="POST">
+                            <a class="nav-link active" aria-current="page"><button type="submit" th:text="'Αποσύνδεση'"></button></a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col col-md-12">
+            <div th:if="${param.success}">
+                <div class="alert alert-success" th:text="'Έκλεισες με επιτυχία το ραντεβού σου!'"></div>
+            </div>
+            <div th:if="${param.success_cancel}">
+                <div class="alert alert-success" th:text="'Ακύρωσες με επιτυχία το ραντεβού σου!'"></div>
+            </div>
+            <div th:if="${param.success_delete}">
+                <div class="alert alert-success" th:text="'Διέγραψες με επιτυχία το ραντεβού σου!'"></div>
+            </div>
+            <div class="custom_img_card">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center" th:text="'Τα Ραντεβού Μου'"></h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered" th:if="${!appointments.isEmpty()}">
+                            <thead>
+                                <tr>
+                                    <th scope="col" th:text="'#'"></th>
+                                    <th scope="col" th:if="${role == '[ROLE_PATIENT]'}" th:text="'Γιατρός'"></th>
+                                    <th scope="col" th:if="${role == '[ROLE_PATIENT]'}" th:text="'Ειδικότητα'"></th>
+                                    <th scope="col" th:if="${role == '[ROLE_PATIENT]'}" th:text="'Διεύθυνση'"></th>
+                                    <th scope="col" th:if="${role == '[ROLE_DOCTOR]'}" th:text="'Ασθενής'"></th>
+                                    <th scope="col" th:if="${role == '[ROLE_DOCTOR]'}" th:text="'Αιτία Ραντεβού'"></th>
+                                    <th scope="col" th:text="'Email'"></th>
+                                    <th scope="col" th:text="'Τηλέφωνο'"></th>
+                                    <th scope="col" th:text="'Ημερομηνία Ραντεβού'"></th>
+                                    <th scope="col" th:text="'Ώρα Ραντεβού'"></th>
+                                    <th scope="col" th:text="'Ενέργεια'"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="appointment, loopStat : ${appointments}">
+                                    <th th:text="${loopStat.index + 1}"></th>
+                                    <td th:if="${role == '[ROLE_PATIENT]'}" th:text="${appointment.doctor.firstName} + ' ' + ${appointment.doctor.lastName}"></td>
+                                    <td th:if="${role == '[ROLE_PATIENT]'}" th:text="${appointment.doctor.specialization}"></td>
+                                    <td th:if="${role == '[ROLE_PATIENT]'}" th:text="${appointment.doctor.address}"></td>
+                                    <td th:if="${appointment.patient != null && role == '[ROLE_DOCTOR]'}" th:text="${appointment.patient.firstName} + ' ' + ${appointment.patient.lastName}"></td>
+                                    <td th:if="${role == '[ROLE_DOCTOR]' && appointment.patient == null}" th:text="'Ελεύθερο Ραντεβού'"></td>
+                                    <td th:if="${appointment.patient != null && role == '[ROLE_DOCTOR]'}" th:text="${appointment.reason}"></td>
+                                    <td th:if="${role == '[ROLE_DOCTOR]' && appointment.patient == null}" th:text="'---'"></td>
+                                    <td th:if="${role == '[ROLE_PATIENT]'}" th:text="${appointment.doctor.email}"></td>
+                                    <td th:if="${appointment.patient != null && role == '[ROLE_DOCTOR]'}" th:text="${appointment.patient.email}"></td>
+                                    <td th:if="${role == '[ROLE_DOCTOR]' && appointment.patient == null}" th:text="'---'"></td>
+                                    <td th:if="${role == '[ROLE_PATIENT]'}" th:text="${appointment.doctor.telephone}"></td>
+                                    <td th:if="${appointment.patient != null && role == '[ROLE_DOCTOR]'}" th:text="${appointment.patient.telephone}"></td>
+                                    <td th:if="${role == '[ROLE_DOCTOR]' && appointment.patient == null}" th:text="'---'"></td>
+                                    <td th:text="${appointment.appointmentDate}"></td>
+                                    <td th:text="${appointment.appointmentTime}"></td>
+                                    <td th:if="${role == '[ROLE_PATIENT]'}"><a th:href="@{'/appointment/cancel/{appId}/{userId}' (appId=${appointment.id}, userId=${appointment.patient.id})}" th:text="'Ακύρωση'"></a></td>
+                                    <td th:if="${role == '[ROLE_DOCTOR]'}"><a th:href="@{'/appointment/delete/{appId}/{userId}' (appId=${appointment.id}, userId=${appointment.doctor.id})}" th:text="'Διαγραφή'"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p th:if="${appointments.isEmpty()}" class="text-center" th:text="'Δεν έχει ακόμα κάποιο ραντεβού...'"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

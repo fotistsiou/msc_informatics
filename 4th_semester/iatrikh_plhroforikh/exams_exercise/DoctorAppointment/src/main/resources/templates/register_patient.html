@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Εγγραφή ως Ασθενής'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Doctor AnySite'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col col-md-12">
+            <div class="custom_img_card">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center" th:text="'Εγγραφή ως Ασθενής'"></h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="#" role="form" th:action="@{/register/ROLE_PATIENT}" th:object="${user}" method="POST">
+                            <div class="form-group mb-3">
+                                <label for="firstNameUser" class="form-label" th:text="'Όνομα'"></label>
+                                <input class="form-control"
+                                       id="firstNameUser"
+                                       name="firstNameUser"
+                                       th:field="*{firstName}"
+                                       type="text"
+                                />
+                                <p class="text-danger"
+                                   th:errors="*{firstName}"
+                                   th:if="${#fields.hasErrors('firstName')}">
+                                </p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="lastNameUser" class="form-label" th:text="'Επώνυμο'"></label>
+                                <input class="form-control"
+                                       id="lastNameUser"
+                                       name="lastNameUser"
+                                       th:field="*{lastName}"
+                                       type="text"
+                                />
+                                <p class="text-danger"
+                                   th:errors="*{lastName}"
+                                   th:if="${#fields.hasErrors('lastName')}">
+                                </p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="emailUser" class="form-label" th:text="'Email'"></label>
+                                <input class="form-control"
+                                       id="emailUser"
+                                       name="emailUser"
+                                       th:field="*{email}"
+                                       type="email"
+                                />
+                                <p class="text-danger"
+                                   th:errors="*{email}"
+                                   th:if="${#fields.hasErrors('email')}">
+                                </p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="passwordUser" class="form-label" th:text="'Κωδικός'"></label>
+                                <input class="form-control"
+                                       id="passwordUser"
+                                       name="passwordUser"
+                                       th:field="*{password}"
+                                       type="password"
+                                />
+                                <p class="text-danger"
+                                   th:errors="*{password}"
+                                   th:if="${#fields.hasErrors('password')}">
+                                </p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="telephoneUser" class="form-label" th:text="'Τηλέφωνο'"></label>
+                                <input class="form-control"
+                                       id="telephoneUser"
+                                       name="telephoneUser"
+                                       th:field="*{telephone}"
+                                       type="tel"
+                                />
+                                <p class="text-danger"
+                                   th:errors="*{telephone}"
+                                   th:if="${#fields.hasErrors('telephone')}">
+                                </p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <button class="btn btn-primary" type="submit" th:text="'Εγγραφή'"></button>
+                            </div>
+                            <div class="form-group mb-3">
+                                <span th:text="'Είσαι ήδη εγγεγραμμένος; '"></span>
+                                <a th:href="@{/login}" th:text="'Σύνδεση εδώ'"></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <img th:src="@{/images/img4.png}"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
