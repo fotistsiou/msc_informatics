@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Geographer'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Geographer |'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="custom_img_card">
+                    <img th:src="@{/images/img1.png}"/>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 th:text="'Καλώς όρισες ' + ${username} + ' στο Geographer!'" sec:authorize="isAuthenticated()"></h2>
+                            <h2 th:text="'Καλώς όρισες στο Geographer!'" sec:authorize="!isAuthenticated()"></h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2 text-center" sec:authorize="!isAuthenticated()">
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{/register/student}" th:text="'Εγγραφή'"></a>
+                                </button>
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{/login}" th:text="'Σύνδεση'"></a>
+                                </button>
+                            </div>
+                            <div class="d-grid gap-2 text-center" sec:authorize="isAuthenticated()">
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{'/account/info/' + ${userId}}" th:text="'Ο Λογαριασμός Μου'"></a>
+                                </button>
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{'/result/all/' + ${userId}}" th:text="'Τα Αποτελέσματά Μου'"></a>
+                                </button>
+                                <form action="#" role="form" th:action="@{/logout}" method="POST">
+                                    <button class="btn btn-dark" type="submit" sec:authorize="isAuthenticated()">
+                                        <a class="a_button" th:text="'Αποσύνδεση'"></a>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-8" sec:authorize="!isAuthenticated()">
+                <h4>
+                    Κάνε γρήγορα την εγγραφή/σύνδεση σου στο Geographer και ξεκίνα την πιο διασκεδαστική επανάληψη στα
+                    παρακάτω κεφάλαια της Γεωγραφίας Ε' Δημοτικού!
+                </h4>
+                <ul class="list-group col-md-7">
+                    <li class="list-group-item list-group-item-primary">
+                        1. Τα γεωγραφικά διαμερίσματα και οι περιφέρειες της Ελλάδας
+                    </li>
+                    <li class="list-group-item list-group-item-success">
+                        2. Οι νομοί της Ελλάδας
+                    </li>
+                    <li class="list-group-item list-group-item-danger">
+                        3. Οι θάλασσες της Ελλάδας
+                    </li>
+                    <li class="list-group-item list-group-item-info">
+                        4. Μεγάλα νησιωτικά συμπλέγματα και νησιά της Ελλάδας
+                    </li>
+                    <li class="list-group-item list-group-item-warning">
+                        5. Τα βουνά της Ελλάδας
+                    </li>
+                    <li class="list-group-item list-group-item-secondary">
+                        Δοκίμασε τις γνώσεις σου!
+                    </li>
+                </ul>
+            </div>
+            <div class="col col-md-8" sec:authorize="isAuthenticated()">
+                <h4>
+                    Το ταξίδι ξεκινά! Επίλεξε ένα απο τα παρακάτω κεφάλαια της Γεωγραφίας Ε' Δημοτικού και ξεκίνα
+                    την πιο διασκεδαστική επανάληψη!
+                </h4>
+                <div class="list-group col-md-7" sec:authorize="isAuthenticated()">
+                    <a th:href="@{/chapter/one}" class="list-group-item list-group-item-primary">
+                        1. Τα γεωγραφικά διαμερίσματα και οι περιφέρειες της Ελλάδας
+                    </a>
+                    <a th:href="@{/chapter/two}" class="list-group-item list-group-item-success">
+                        2. Οι νομοί της Ελλάδας
+                    </a>
+                    <a th:href="@{/chapter/three}" class="list-group-item list-group-item-danger">
+                        3. Οι θάλασσες της Ελλάδας
+                    </a>
+                    <a th:href="@{/chapter/four}" class="list-group-item list-group-item-info">
+                        4. Μεγάλα νησιωτικά συμπλέγματα και νησιά της Ελλάδας
+                    </a>
+                    <a th:href="@{/chapter/five}" class="list-group-item list-group-item-warning ">
+                        5. Τα βουνά της Ελλάδας
+                    </a>
+                    <a th:href="@{/chapter/quizzes}" class="list-group-item list-group-item-secondary">
+                        Δοκίμασε τις γνώσεις σου!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

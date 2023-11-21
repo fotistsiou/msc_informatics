@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Quizzes'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Geographer |'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" th:href="@{/chapter/one}" th:text="'Κεφάλαιο 1'"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" th:href="@{/chapter/two}" th:text="'Κεφάλαιο 2'"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" th:href="@{/chapter/three}" th:text="'Κεφάλαιο 3'"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" th:href="@{/chapter/four}" th:text="'Κεφάλαιο 4'"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" th:href="@{/chapter/five}" th:text="'Κεφάλαιο 5'"></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" th:href="@{/chapter/quizzes}" th:text="'Quizzes'"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-9">
+                <div class="custom_img_card">
+                    <img th:src="@{/images/img7.png}"/>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 th:text="'Δοκίμασε τις γνώσεις σου!'"></h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2 text-center">
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{'/quiz/diamerismata_perifereies'}" th:text="'Τα γεωγραφικά διαμερίσματα και οι περιφέρειες της Ελλάδας'"></a>
+                                </button>
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{'/quiz/proteuouses'}" th:text="'Οι νομοί της Ελλάδας'"></a>
+                                </button>
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{'/quiz/thalasses'}" th:text="'Οι θάλασσες της Ελλάδας'"></a>
+                                </button>
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{'/quiz/nhsia'}" th:text="'Μεγάλα νησιωτικά συμπλέγματα και νησιά της Ελλάδας'"></a>
+                                </button>
+                                <button class="btn btn-dark" type="button">
+                                    <a class="a_button" th:href="@{'/quiz/vouna'}" th:text="'Τα βουνά της Ελλάδας'"></a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

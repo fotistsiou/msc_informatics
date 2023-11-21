@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Κεφάλαιο 5'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Geographer |'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/one}" th:text="'Κεφάλαιο 1'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/two}" th:text="'Κεφάλαιο 2'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/three}" th:text="'Κεφάλαιο 3'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/four}" th:text="'Κεφάλαιο 4'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/chapter/five}" th:text="'Κεφάλαιο 5'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/quizzes}" th:text="'Quizzes'"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="custom_img_card">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 th:text="'Κεφάλαιο 5. Τα βουνά της Ελλάδας'"></h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Το μεγαλύτερο μέρος της χώρας μας είναι ορεινό. Βουνά μικρά και μεγάλα καλύπτουν το 80%
+                                του εδάφους της. Αν παρατηρήσουμε το γεωμορφολογικό χάρτη της χώρας μας (εικόνα 13.2),
+                                θα δούμε ότι τα βουνά της σχηματίζουν το γράμμα Γ, όπου η οριζόντια γραμμή χαράζεται από
+                                την οροσειρά της Ροδόπης και η κατακόρυφη από την οροσειρά της Πίνδου.
+                            </p>
+                            <p>
+                                Η οροσειρά της Πίνδου έχει ψηλότερη κορυφή τον Σμόλικα (2.637 μ.) και αφού διασχίσει την
+                                Ήπειρο και τη Στερεά Ελλάδα, στη συνέχειά της σχηματίζει το Παναχαϊκό όρος, τον Ερύμανθο,
+                                το Μαίναλο, τον Παρνασσό, τον Tαυγετο στην Πελοπόννησο, καθώς επίσης τα Λευκά Όρη και την
+                                Ίδη στην Κρήτη.
+                            </p>
+                            <p>
+                                Οι επιστήμονες ισχυρίζονται ότι η οροσειρά της Πίνδου είναι συνέχεια των Διναρικών Άλπεων,
+                                που βρίσκονται στην Κροατία.
+                            </p>
+                            <p>
+                                Όλα τα βουνά μαζί, μικρά και μεγάλα, αποτελούν ένα μεγάλο μέρος του κατακόρυφου διαμελισμού
+                                της χώρας μας. Αρκετά από αυτά έχουν άγριες κι απότομες πλαγιές, βαθιά φαράγγια και κοιλάδες
+                                που σχηματίζονται ανάμεσά τους και είναι τοπία, στα οποία πολύ δύσκολα πλησιάζει ο άνθρωπος.
+                                Τα περισσότερα βουνά έχουν κατεύθυνση από τα βορειοδυτικά προς τα νοτιοανατολικά.
+                            </p>
+                            <p>
+                                Πολλές φορές οι οροσειρές αποτελούν φυσικό σύνορο περιοχών ή κρατών. Η οροσειρά της Ροδόπης
+                                αποτελεί το βόρειο φυσικό σύνορο της χώρας μας με τη Βουλγαρία. Απλώνεται στις βόρειες περιοχές
+                                της Θράκης και οι πιο γνωστές κορυφές της είναι το βουνό Φαλακρό (2.111 μ.) και ο Όρβηλος
+                                (2.272 μ.).
+                            </p>
+                            <p>
+                                Μελετήστε προσεκτικά τις παρακάτω εικόνες:
+                            </p>
+                            <div class="card-body-img">
+                                <img class="big_img" th:src="@{/images/img14.png}"/>
+                                <img class="big_img" th:src="@{/images/img15.png}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

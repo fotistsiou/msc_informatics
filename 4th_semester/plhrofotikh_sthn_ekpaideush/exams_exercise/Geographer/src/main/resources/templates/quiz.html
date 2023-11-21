@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Ερωτηματολόγιο'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Geographer |'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/chapter/one}" th:text="'Κεφάλαιο 1'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/chapter/two}" th:text="'Κεφάλαιο 2'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/chapter/three}" th:text="'Κεφάλαιο 3'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/chapter/four}" th:text="'Κεφάλαιο 4'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/chapter/five}" th:text="'Κεφάλαιο 5'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/chapter/quizzes}" th:text="'Quizzes'"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="custom_img_card">
+                    <div class="two_img">
+                        <img class="two_img_1" src="/images/img6.png">
+                        <img class="two_img_2" src="/images/img6.png">
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 th:text="'Ερωτηματολόγιο'"></h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" role="form" th:action="@{'/quiz/{chapter}'(chapter=${chapter})}" th:object="${quiz}" method="POST">
+                                <div class="quiz_form" th:each="question, i: ${quiz.questions}">
+                                    <input type="hidden" th:name="|questions[${i.index}].id|" th:value="${question.id}" />
+                                    <input type="hidden" th:name="|questions[${i.index}].title|" th:value="${question.title}" />
+                                    <input type="hidden" th:name="|questions[${i.index}].chapter|" th:value="${question.chapter}" />
+                                    <input type="hidden" th:name="|questions[${i.index}].answer|" th:value="${question.answer}" />
+                                    <p class="title" th:text="${question.title}"></p>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               th:id="|questions[${i.index}].choice|"
+                                               th:name="|questions[${i.index}].choice|"
+                                               type="radio"
+                                               th:value="1"
+                                        />
+                                        <label th:for="|questions[${i.index}].choice|" class="form-check-label" th:text="${question.optionA}"></label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               th:id="|questions[${i.index}].choice|"
+                                               th:name="|questions[${i.index}].choice|"
+                                               type="radio"
+                                               th:value="2"
+                                        />
+                                        <label th:for="|questions[${i.index}].choice|" class="form-check-label" th:text="${question.optionB}"></label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               th:id="|questions[${i.index}].choice|"
+                                               th:name="|questions[${i.index}].choice|"
+                                               type="radio"
+                                               th:value="3"
+                                        />
+                                        <label th:for="|questions[${i.index}].choice|" class="form-check-label" th:text="${question.optionC}"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group button">
+                                    <button class="btn btn-primary" type="submit" th:text="'Υποβολή Απαντήσεων'"></button>
+                                </div>
+                                <div class="form-group button">
+                                    <button class="btn btn-danger" type="button">
+                                        <a class="a_button" th:href="@{'/chapter/quizzes'}" th:text="'Επιστροφή στα Quizzes'"></a>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="two_img">
+                        <img class="two_img_3" src="/images/img6.png">
+                        <img class="two_img_4" src="/images/img6.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

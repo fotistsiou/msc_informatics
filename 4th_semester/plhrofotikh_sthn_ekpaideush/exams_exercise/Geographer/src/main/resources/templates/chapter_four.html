@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Κεφάλαιο 4'"></title>
+    <link rel="stylesheet"
+          th:href="@{/css/main.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}" th:text="'Geographer |'"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/one}" th:text="'Κεφάλαιο 1'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/two}" th:text="'Κεφάλαιο 2'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/three}" th:text="'Κεφάλαιο 3'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/chapter/four}" th:text="'Κεφάλαιο 4'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/five}" th:text="'Κεφάλαιο 5'"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/chapter/quizzes}" th:text="'Quizzes'"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="custom_img_card">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 th:text="'Κεφάλαιο 4. Μεγάλα νησιωτικά συμπλέγματα και νησιά της Ελλάδας'"></h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Ομάδες νησιών που βρίσκονται στην ίδια θαλάσσια περιοχή συνιστούν ένα νησιωτικό σύμπλεγμα.
+                                Τα κυριότερα νησιωτικά συμπλέγματα της Ελλάδας είναι: οι Κυκλάδες, οι Σποράδες, τα Δωδεκάνησα,
+                                τα Επτάνησα και τα νησιά του Ανατολικού Αιγαίου.
+                            </p>
+                            <p>
+                                Ορισμένα νησιά της χώρας μας, όπως η Σαντορίνη, η Μήλος, η Νίσυρος, δημιουργήθηκαν από
+                                εκρήξεις ηφαιστείων. Ο επισκέπτης αυτών των νησιών αντιλαμβάνεται την ύπαρξη των ηφαιστείων
+                                από το χρώμα των πετρωμάτων και τη μυρωδιά θειαφιού.
+                            </p>
+                            <p>
+                                Περίπου το 1/5 της συνολικής επιφάνειας της Ελλάδας αποτελείται από νησιά. Όπως έχουμε ήδη
+                                μάθει, τα ελληνικά νησιά είναι περισσότερα από 2.000 και τα πιο πολλά από αυτά βρίσκονται
+                                στο Αιγαίο πέλαγος. Τα δέκα μεγαλύτερα σε έκταση ελληνικά νησιά είναι: Kρήτη, Eύβοια,
+                                Λέσβος, Pόδος, Xίος, Kεφαλονιά, Kέρκυρα, Σάμος, Λήμνος, Nάξος.
+                            </p>
+                            <p>
+                                Μελετήστε προσεκτικά την παρακάτω εικόνα:
+                            </p>
+                            <div class="card-body-img">
+                                <img class="big_img" th:src="@{/images/img13.png}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
