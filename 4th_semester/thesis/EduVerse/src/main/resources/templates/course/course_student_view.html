@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'EduVerse | Προβολή Αποτελεσμάτων Φοιτητή'"></title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav th:replace="~{fragment/nav :: nav}"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="card_wrapper">
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <h2 class="text-center" th:text="'Προβολή Αποτελεσμάτων Φοιτητή'"></h2>
+                            <h4 class="text-center">
+                                <span th:text="'Μαθήμα:'"></span>
+                                <a th:href="@{'/course/view/{courseId}/{userId}' (courseId=${courseId}, userId=${professorId})}" th:text="${course.title}"></a>
+                            </h4>
+                            <h4 class="text-center">
+                                <span th:text="'Φοιτητής:'"></span>
+                                <span th:text="${student.firstName + ' ' + student.lastName + ' (' + student.am + ')'}"></span>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered" th:if="${!results.isEmpty()}">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" th:text="'#'"></th>
+                                        <th scope="col" th:text="'Κεφάλαιο'"></th>
+                                        <th scope="col" th:text="'Σκορ'"></th>
+                                        <th scope="col" th:text="'Σχόλιο'"></th>
+                                        <th scope="col" th:text="'Ενέργεια'"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="result, loopStat : ${results}">
+                                        <th th:text="${loopStat.index + 1}"></th>
+                                        <td th:text="${result.chapter.title}"></td>
+                                        <td th:text="${result.correct + '/' + (result.correct + result.wrong)}"></td>
+                                        <td class="bg-success text-white"
+                                            th:if="${result.feedback == 'Μπορείς να προχωρήσεις στο επόμενο κεφάλαιο.'}"
+                                            th:text="${result.feedback}">
+                                        </td>
+                                        <td class="bg-warning text-black"
+                                            th:if="${result.feedback == 'Θα ήταν καλό να διαβάσεις ξανά το κεφάλαιο και να επαναλάβεις το ερωτηματολόγιο.'}"
+                                            th:text="${result.feedback}">
+                                        </td>
+                                        <td class="bg-danger text-white"
+                                            th:if="${result.feedback == 'Θα πρέπει να διαβάσεις ξανά το κεφάλαιο και να επαναλάβεις το ερωτηματολόγιο.'}"
+                                            th:text="${result.feedback}">
+                                        </td>
+                                        <td>
+                                            <a th:href="@{'/quiz/question/{resultId}/{studentId}/{professorId}' (resultId=${result.id}, studentId=${studentId}, professorId=${professorId})}" th:text="'Προβολή'"></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-center" th:text="'Δεν έχει ολοκληρώσει ακόμα κάποιο ερωτηματολόγιο...'" th:if="${results.isEmpty()}"></p>
+                            <div class="mb-3">
+                                <button class="btn btn-primary" type="button">
+                                    <a class="a_button" th:href="@{'/course/student/all/{userId}' (userId=${professorId})}" th:text="'Επιστροφή στους Φοιτητές Μου'"></a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="m-3" th:src="@{/images/img27.png}" th:alt="'course student view image'"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav th:replace="~{fragment/footer :: footer}"></nav>
+</body>
+</html>

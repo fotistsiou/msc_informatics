@@ -1,0 +1,175 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* ---------------------   Start Navbar CSS   --------------------- */
+
+.navbar {
+    min-height: 60px;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+/* ---------------------   End Navbar CSS   --------------------- */
+
+/* ---------------------   Start Container CSS   --------------------- */
+
+.container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.row {
+    justify-content: center;
+}
+.card_wrapper,
+.card_wrapper_col {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.card_wrapper {
+    flex-direction: row;
+}
+.card_wrapper_col {
+    flex-direction: column;
+}
+.card_wrapper img,
+.card_wrapper_col img {
+    width: 25rem;
+}
+
+/* Quiz Pages */
+
+.quiz_form {
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 3px;
+}
+.quiz_form:first-child {
+    margin-top: 0;
+}
+.quiz_form p {
+    margin-bottom: 0.5rem;
+}
+
+/* Counter CSS */
+
+.counters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 3rem;
+}
+
+.counters .counter-wrapper {
+    text-align: center;
+}
+
+.counters .counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+    border-radius: 100%;
+    background: #212529;
+    color: #fff;
+}
+
+.counters .text {
+    color: #212529;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* ---------------------   End Container CSS   --------------------- */
+
+/* ---------------------   Start Footer CSS   --------------------- */
+
+.site-footer {
+    background-color: #212529;
+    color: #fff;
+    border: 0;
+    padding: 1px 0;
+    margin: 0;
+}
+.site-footer .row {
+    align-items: center;
+}
+.site-footer .social-icons {
+    text-align:right
+}
+.copyright-text {
+    margin:0
+}
+.social-icons {
+    margin-bottom:0;
+}
+.social-icons li {
+    display:inline-block;
+}
+.social-icons a {
+    width:40px;
+    height:40px;
+    margin-left:10px;
+    border-radius:100%;
+    color:#818a91;
+    display:inline-block;
+}
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+    color:#fff;
+}
+.social-icons.size-sm a {
+    height:34px;
+    width:34px;
+}
+.social-icons a.linkedin:hover {
+    background-color:#007bb6
+}
+.social-icons a.github:hover {
+    background-color:#000
+}
+
+/* ---------------------   End Footer CSS   --------------------- */
+
+/* ---------------------   Start General CSS   --------------------- */
+
+/* Buttons */
+.a_button,
+.a_button:hover {
+    color: #fff;
+    text-decoration: none;
+}
+button {
+    width: 100%;
+}
+.two-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.two-buttons button {
+    width: 35%;
+}
+
+/* Not support from bootstrap 5 by default for accessibility reasons */
+.text-justify {
+    text-align: justify;
+}
+
+/* ---------------------   Start General CSS   --------------------- */

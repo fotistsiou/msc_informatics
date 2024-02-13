@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'EduVerse | Επεξεργασία Μαθήματος'"></title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav th:replace="~{fragment/nav :: nav}"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-10">
+                <div class="card_wrapper">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center" th:text="'Επεξεργασία Μαθήματος'"></h2>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" th:action="@{'/course/edit/{courseId}/{userId}'(courseId=${courseId}, userId=${userId})} " th:object="${course}" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="code" th:text="'Κωδικός'"></label>
+                                    <input class="form-control"
+                                           id="code"
+                                           name="code"
+                                           type="text"
+                                           th:field="*{code}"/>
+                                    <p class="text-danger"
+                                       th:errors="*{code}"
+                                       th:if="${#fields.hasErrors('code')}">
+                                    </p>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="title" th:text="'Τίτλος'"></label>
+                                    <input class="form-control"
+                                           id="title"
+                                           name="title"
+                                           type="text"
+                                           th:field="*{title}"/>
+                                    <p class="text-danger"
+                                       th:errors="*{title}"
+                                       th:if="${#fields.hasErrors('title')}">
+                                    </p>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="description" th:text="'Σύντομη Περιγραφή'"></label>
+                                    <textarea class="form-control"
+                                              id="description"
+                                              name="description"
+                                              rows="10"
+                                              cols="70"
+                                              th:field="*{description}">
+                                    </textarea>
+                                    <p class="text-danger"
+                                       th:errors="*{description}"
+                                       th:if="${#fields.hasErrors('description')}">
+                                    </p>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <button class="btn btn-primary" type="submit" th:text="'Αποθήκευση'"></button>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <button class="btn btn-danger" type="button">
+                                        <a class="a_button" th:href="@{'/course/my/{userId}' (userId=${userId})}" th:text="'Ακύρωση'"></a>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <img th:src="@{/images/img16.png}" th:alt="'course edit image'"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav th:replace="~{fragment/footer :: footer}"></nav>
+</body>
+</html>

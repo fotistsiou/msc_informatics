@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'EduVerse | Ερωτήσεις Κεφαλαίου'"></title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link crossorigin="anonymous"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          rel="stylesheet">
+</head>
+<body>
+    <nav th:replace="~{fragment/nav :: nav}"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div th:if="${param.success_create_question}">
+                    <div class="alert alert-success" th:text="'Δημιούργησες με επιτυχία μία νέα ερώτηση!'"></div>
+                </div>
+                <div th:if="${param.success_delete_question}">
+                    <div class="alert alert-success" th:text="'Διαγράψατε με επιτυχία μία ερώτηση!'"></div>
+                </div>
+                <div th:if="${param.success_edit_question}">
+                    <div class="alert alert-success" th:text="'Επεξεργάστηκες με επιτυχία μία ερώτηση!'"></div>
+                </div>
+                <div class="card_wrapper">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center">
+                                <span th:text="'Προβολή Ερωτήσων Κεφαλαίου'"></span>
+                            </h2>
+                            <h4 class="text-center">
+                                <span th:text="'Κεφάλαιο:'"></span>
+                                <a th:href="@{'/chapter/view/{chapterId}/{userId}' (chapterId=${chapterId}, userId=${userId})}" th:text="${chapter.title}"></a>
+                            </h4>
+                            <h4 class="text-center">
+                                <span th:text="'Μαθήμα:'"></span>
+                                <a th:href="@{'/course/view/{courseId}/{userId}' (courseId=${chapter.course.id}, userId=${userId})}" th:text="${chapter.course.title}"></a>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered" th:if="${!questions.isEmpty()}">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" th:text="'#'"></th>
+                                        <th scope="col" th:text="'Ερώτηση'"></th>
+                                        <th scope="col" th:text="'Επιλογή Α'"></th>
+                                        <th scope="col" th:text="'Επιλογή Β'"></th>
+                                        <th scope="col" th:text="'Επιλογή Γ'"></th>
+                                        <th scope="col" th:text="'Απάντηση'"></th>
+                                        <th scope="col" th:text="'Ενέργεια'"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="question, loopStat : ${questions}">
+                                        <th th:text="${loopStat.index + 1}"></th>
+                                        <td th:text="${question.title}"></td>
+                                        <td th:text="${question.option_a}"></td>
+                                        <td th:text="${question.option_b}"></td>
+                                        <td th:text="${question.option_c}"></td>
+                                        <td th:if="${question.answer == 1}" th:text="'Επιλογή Α'"></td>
+                                        <td th:if="${question.answer == 2}" th:text="'Επιλογή Β'"></td>
+                                        <td th:if="${question.answer == 3}" th:text="'Επιλογή Γ'"></td>
+                                        <td>
+                                            <a class="d-block" th:href="@{'/question/edit/{questionId}/{userId}' (questionId=${question.id}, userId=${userId})}" th:text="'Επεξεργασία'"></a>
+                                            <a class="d-block" th:href="@{'/question/delete/{questionId}/{userId}' (questionId=${question.id}, userId=${userId})}" th:text="'Διαγραφή'"></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-center" th:text="'Δεν υπάρχουν ακόμα ερωτήσεις...'" th:if="${questions.isEmpty()}"></p>
+                            <button class="btn btn-primary" type="button">
+                                <a class="a_button" th:href="@{'/question/new/{chapterId}/{userId}' (chapterId=${chapterId}, userId=${userId})}" th:text="'Δημιουργία Νέας Ερώτησης'"></a>
+                            </button>
+                        </div>
+                    </div>
+                    <img class="m-3" th:src="@{/images/img19.png}" th:alt="'question view image'"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav th:replace="~{fragment/footer :: footer}"></nav>
+</body>
+</html>

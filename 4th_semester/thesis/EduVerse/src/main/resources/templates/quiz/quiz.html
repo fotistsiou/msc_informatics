@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'EduVerse | Ερωτηματολόγιο'"></title>
+    <link rel="icon" th:href="@{/images/favicon.png}" type="image/png"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link crossorigin="anonymous"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          rel="stylesheet">
+</head>
+<body>
+    <nav th:replace="~{fragment/nav :: nav}"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="card_wrapper">
+                    <img class="m-3" th:src="@{/images/img23.png}" th:alt="'quiz image'"/>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center" th:text="'Ερωτηματολόγιο'"></h2>
+                            <h4 class="text-center">
+                                <span th:text="'Κεφάλαιο:'"></span>
+                                <a th:href="@{'/chapter/view/{chapterId}/{userId}' (chapterId=${chapter.id}, userId=${userId})}" th:text="${chapter.title}"></a>
+                            </h4>
+                            <h4 class="text-center">
+                                <span th:text="'Μαθήμα:'"></span>
+                                <a th:href="@{'/course/view/{courseId}/{userId}' (courseId=${chapter.course.id}, userId=${userId})}" th:text="${chapter.course.title}"></a>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" th:action="@{'/quiz/{chapterId}/{userId}' (chapterId=${chapterId}, userId=${userId})}" th:object="${quiz}" th:if="${!quiz.getQuestions().isEmpty()}" method="post">
+                                <div class="quiz_form" th:each="question, i: ${quiz.questions}">
+                                    <input th:name="|questions[${i.index}].id|" th:value="${question.id}" type="hidden"/>
+                                    <input th:name="|questions[${i.index}].title|" th:value="${question.title}" type="hidden"/>
+                                    <input th:name="|questions[${i.index}].chapter|" th:value="${question.chapter.id}" type="hidden"/>
+                                    <input th:name="|questions[${i.index}].answer|" th:value="${question.answer}" type="hidden"/>
+                                    <p class="title" th:text="${question.title}"></p>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               th:id="|questions[${i.index}].choice|"
+                                               th:name="|questions[${i.index}].choice|"
+                                               th:value="1"
+                                               th:checked="1"/>
+                                        <label class="form-check-label"
+                                               th:for="|questions[${i.index}].choice|"
+                                               th:text="${question.option_a}">
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               th:id="|questions[${i.index}].choice|"
+                                               th:name="|questions[${i.index}].choice|"
+                                               th:value="2"/>
+                                        <label class="form-check-label"
+                                               th:for="|questions[${i.index}].choice|"
+                                               th:text="${question.option_b}">
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               th:id="|questions[${i.index}].choice|"
+                                               th:name="|questions[${i.index}].choice|"
+                                               th:value="3"/>
+                                        <label class="form-check-label"
+                                               th:for="|questions[${i.index}].choice|"
+                                               th:text="${question.option_c}">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <button class="btn btn-primary" type="submit" th:text="'Υποβολή Απαντήσεων'"></button>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <button class="btn btn-danger" type="button">
+                                        <a class="a_button" th:href="@{'/course/view/{courseId}/{userId}' (courseId=${chapter.course.id}, userId=${userId})}" th:text="'Ακύρωση'"></a>
+                                    </button>
+                                </div>
+                            </form>
+                            <p class="text-center" th:text="'Δεν έχει δημιουργηθεί ακόμα το ερωτηματολόγιο...'" th:if="${quiz.getQuestions().isEmpty()}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav th:replace="~{fragment/footer :: footer}"></nav>
+</body>
+</html>

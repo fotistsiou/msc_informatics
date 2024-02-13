@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'EduVerse | Εγγραφή Καθηγητή'"></title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="text-start">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="navbar-brand" th:href="@{'/'}">
+                            <img th:src="@{/images/favicon.png}" th:alt="'logo image'"/>
+                            <span th:text="'EduVerse'"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="card_wrapper">
+                    <img th:src="@{/images/img7.png}" th:alt="'register professor image'"/>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center" th:text="'Φόρμα Εγγραφής Καθηγητή'"></h2>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" th:action="@{/register/ROLE_PROFESSOR}" th:object="${user}" method="post">
+                                <input type="hidden" th:field="*{am}"/>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="email" th:text="'Email'"></label>
+                                    <input class="form-control"
+                                           id="email"
+                                           name="email"
+                                           type="email"
+                                           th:field="*{email}"/>
+                                    <p class="text-danger"
+                                       th:errors="*{email}"
+                                       th:if="${#fields.hasErrors('email')}">
+                                    </p>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="firstName" th:text="'Όνομα'"></label>
+                                    <input class="form-control"
+                                           id="firstName"
+                                           name="firstName"
+                                           type="text"
+                                           th:field="*{firstName}"/>
+                                    <p class="text-danger"
+                                       th:errors="*{firstName}"
+                                       th:if="${#fields.hasErrors('firstName')}">
+                                    </p>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="lastName" th:text="'Επώνυμο'"></label>
+                                    <input class="form-control"
+                                           id="lastName"
+                                           name="lastName"
+                                           type="text"
+                                           th:field="*{lastName}"/>
+                                    <p class="text-danger"
+                                       th:errors="*{lastName}"
+                                       th:if="${#fields.hasErrors('lastName')}">
+                                    </p>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="password" th:text="'Κωδικός'"></label>
+                                    <input class="form-control"
+                                           id="password"
+                                           name="password"
+                                           type="password"
+                                           th:field="*{password}"/>
+                                    <p class="text-danger"
+                                       th:errors="*{password}"
+                                       th:if="${#fields.hasErrors('password')}">
+                                    </p>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="form-label" for="telephone" th:text="'Τηλέφωνο'"></label>
+                                    <input class="form-control"
+                                           id="telephone"
+                                           name="telephone"
+                                           type="tel"
+                                           th:field="*{telephone}"/>
+                                    <p class="text-danger"
+                                       th:errors="*{telephone}"
+                                       th:if="${#fields.hasErrors('telephone')}">
+                                    </p>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <button class="btn btn-primary" type="submit" th:text="'Εγγραφή'"></button>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <span th:text="'Είσαι ήδη εγγεγραμμένος; '"></span>
+                                    <a th:href="@{/login}" th:text="'Σύνδεση εδώ'"></a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav th:replace="~{fragment/footer :: footer}"></nav>
+</body>
+</html>

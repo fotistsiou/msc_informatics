@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'EduVerse | Τα Μαθήματά Μου'"></title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <nav th:replace="~{fragment/nav :: nav}"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div th:if="${param.success}">
+                    <div class="alert alert-success" th:text="'Δημιούργησες με επιτυχία ένα νέο μάθημα!'"></div>
+                </div>
+                <div th:if="${param.success_delete}">
+                    <div class="alert alert-success" th:text="'Διέγραψες με επιτυχία ένα μάθημα!'"></div>
+                </div>
+                <div th:if="${param.success_register}">
+                    <div class="alert alert-success" th:text="'Έκανες εγγραφή σε νέο μάθημα με επιτυχία!'"></div>
+                </div>
+                <div th:if="${param.success_remove}">
+                    <div class="alert alert-success" th:text="'Έκανες απεγγραφή στο μάθημα με επιτυχία!'"></div>
+                </div>
+                <div th:if="${param.success_edit}">
+                    <div class="alert alert-success" th:text="'Έκανες επεξεργασία του μαθήματος με επιτυχία!'"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center" th:text="'Τα Μαθήματά Μου'"></h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered" th:if="${!courses.isEmpty()}">
+                            <thead>
+                                <tr>
+                                    <th scope="col" th:text="'#'"></th>
+                                    <th scope="col" th:text="'Κωδικός'"></th>
+                                    <th scope="col" th:text="'Τίτλος'"></th>
+                                    <th scope="col" th:text="'Περιγραφή'"></th>
+                                    <th scope="col" th:text="'Καθηγητής'" sec:authorize="hasRole('ROLE_STUDENT')"></th>
+                                    <th scope="col" th:text="'Ενέργεια'"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="course, loopStat : ${courses}">
+                                    <th th:text="${loopStat.index + 1}"></th>
+                                    <td th:text="${course.code}"></td>
+                                    <td th:text="${course.title}"></td>
+                                    <td th:text="${course.description}"></td>
+                                    <td sec:authorize="hasRole('ROLE_STUDENT')" th:text="${course.professor.firstName + ' ' + course.professor.lastName}"></td>
+                                    <td sec:authorize="hasRole('ROLE_STUDENT')">
+                                        <a class="d-block" th:href="@{'/course/view/{courseId}/{userId}' (courseId=${course.id}, userId=${userId})}" th:text="'Προβολή'"></a>
+                                        <a class="d-block" th:href="@{'/course/remove/{courseId}/{userId}' (courseId=${course.id}, userId=${userId})}" th:text="'Απεγγραφή'"></a>
+                                    </td>
+                                    <td sec:authorize="hasRole('ROLE_PROFESSOR')">
+                                        <a class="d-block" th:href="@{'/course/view/{courseId}/{userId}' (courseId=${course.id}, userId=${userId})}" th:text="'Προβολή'"></a>
+                                        <a class="d-block" th:href="@{'/course/edit/{courseId}/{userId}' (courseId=${course.id}, userId=${userId})}" th:text="'Επεξεργασία'"></a>
+                                        <a class="d-block" th:href="@{'/course/delete/{courseId}/{userId}' (courseId=${course.id}, userId=${userId})}" th:text="'Διαγραφή'"></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-center" th:text="'Δεν έχεις ακόμα κάποιο μάθημα...'" th:if="${courses.isEmpty()}"></p>
+                        <button class="btn btn-primary" type="button" sec:authorize="hasRole('ROLE_PROFESSOR')">
+                            <a class="a_button" th:href="@{'/course/new/{userId}' (userId=${userId})}" th:text="'Δημιουργία Νεόυ Μαθήματος'"></a>
+                        </button>
+                        <button class="btn btn-primary" type="button" sec:authorize="hasRole('ROLE_STUDENT')">
+                            <a class="a_button" th:href="@{'/course/register/{userId}' (userId=${userId})}" th:text="'Διαθέσιμα Μαθήματα'"></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav th:replace="~{fragment/footer :: footer}"></nav>
+</body>
+</html>

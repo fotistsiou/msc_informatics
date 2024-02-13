@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="el" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'EduVerse | Προβολή Ερωτηματολογίου'"></title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link crossorigin="anonymous"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          rel="stylesheet">
+</head>
+<body>
+    <nav th:replace="~{fragment/nav :: nav}"></nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="card_wrapper">
+                    <img class="m-3" th:src="@{/images/img24.png}" th:alt="'quiz question image'"/>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center" th:text="'Προβολή Ερωτηματολογίου'"></h2>
+                            <h4 class="text-center">
+                                <span th:text="'Κεφάλαιο:'"></span>
+                                <a th:href="@{'/chapter/view/{chapterId}/{userId}' (chapterId=${result.chapter.id}, userId=${userId})}" th:text="${result.chapter.title}"></a>
+                            </h4>
+                            <h4 class="text-center">
+                                <span th:text="'Μαθήμα:'"></span>
+                                <a th:href="@{'/course/view/{courseId}/{userId}' (courseId=${result.chapter.course.id}, userId=${userId})}" th:text="${result.chapter.course.title}"></a>
+                            </h4>
+                            <h4 class="text-center" sec:authorize="hasRole('ROLE_PROFESSOR')">
+                                <span th:text="'Φοιτητής:'"></span>
+                                <span th:text="${student.firstName + ' ' + student.lastName + ' (' + student.am + ')'}"></span>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered" th:if="${!quizQuestions.isEmpty()}">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" th:text="'#'"></th>
+                                        <th scope="col" th:text="'Ερώτηση'"></th>
+                                        <th scope="col" th:text="'Σωστή Απάντηση'"></th>
+                                        <th scope="col" th:text="'Επιλεγμένη Απάντηση'"></th>
+                                        <th scope="col" th:text="'Αποτέλεσμα'"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="quizQuestion, loopStat : ${quizQuestions}">
+                                        <th th:text="${loopStat.index + 1}"></th>
+                                        <td th:text="${quizQuestion.title}"></td>
+                                        <td th:text="${quizQuestion.answer}"></td>
+                                        <td th:text="${quizQuestion.choice}"></td>
+                                        <td th:if="${quizQuestion.answer == quizQuestion.choice}" th:text="'Σωστό'"></td>
+                                        <td th:if="${quizQuestion.answer != quizQuestion.choice}" th:text="'Λάθος'"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn btn-primary" type="button" sec:authorize="hasRole('ROLE_STUDENT')">
+                                <a class="a_button" th:href="@{'/quiz/result/all/{studentId}' (studentId=${studentId})}" th:text="'Επιστροφή στα Συνολικά Αποτελέσματα'"></a>
+                            </button>
+                            <button class="btn btn-primary" type="button" sec:authorize="hasRole('ROLE_PROFESSOR')">
+                                <a class="a_button" th:href="@{'/course/student/view/{courseId}/{studentId}/{professorId}' (courseId=${courseId}, studentId=${studentId}, professorId=${professorId})}" th:text="'Επιστροφή στα Αποτελέσματα Φοιτητή'"></a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav th:replace="~{fragment/footer :: footer}"></nav>
+</body>
+</html>
