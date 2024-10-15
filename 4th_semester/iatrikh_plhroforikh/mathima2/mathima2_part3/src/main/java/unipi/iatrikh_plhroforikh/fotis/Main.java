@@ -25,7 +25,7 @@ public class Main {
         get3("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata");
     }
 
-    // HttpRequest Method with use gson library
+    // HttpRequest GET request using java.net.http library
     public static String get(String uri) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -39,14 +39,14 @@ public class Main {
         }
     }
 
-    // With json api with use gson library
+    // GET request to the specified URI and parses the JSON response using com.google.gson library.
     public static void get2(String uri) {
         String response = get(uri);
         JsonObject jsonObject = JsonParser.parseString(response).getAsJsonObject();
         System.out.println(jsonObject.get("activity"));
     }
 
-    // With array-json api with use gson library
+    // GET request to the specified URI and parses the JSON array response using com.google.gson library.
     public static void get3(String uri) {
         String response = get(uri);
         JsonObject jsonObject = JsonParser.parseString(response).getAsJsonObject();
